@@ -1,15 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
+const cors = require('cors');
 const userRouters = require('./routes/userRoutes')
 // const taskRouters = require('./routes/taskRoute')
 const auth = require('./Middlewares/auth');
-const unless =require('express-unless')
+const unless =require('express-unless');
+const BoardRouter = require('./routes/boardRoutes');
 require('dotenv').config();
 require('./db');
 
 const PORT = 8000;
 app.use(bodyParser.json());
+app.use(cors());
+app.use(express.json());
+
 
 
 // AUTH VERIFICATION AND UNLESS
@@ -26,6 +31,7 @@ app.use(
 );
 
 app.use('/user', userRouters);
+app.use('/board', BoardRouter)
 
 // Board, list, card here
 // app.use('/tasks', taskRouters)

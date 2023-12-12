@@ -1,4 +1,4 @@
-const userModel = require("../models/UserSchema");
+const userModel = require("../Models/UserModel");
 const { createRandomHexColor } = require("./utils");
 
 const register = async (user, callback) => {
@@ -6,7 +6,7 @@ const register = async (user, callback) => {
   await newUser
     .save()
     .then((result) => {
-      return callback(false, { message: "User created successfuly!" });
+      return callback(false, { message: "User created successfully!" });
     })
     .catch((err) => {
       return callback({ errMessage: "Email already in use!", details: err });

@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const userModel = require("../models/UserSchema");
+const userModel = require("../Models/UserModel");
 const generateToken = (id, email) => {
   // const token = jwt.sign({ id, email }, process.env.JWT_SECRET, {
   //   expiresIn: process.env.TOKEN_EXPIRE_TIME,

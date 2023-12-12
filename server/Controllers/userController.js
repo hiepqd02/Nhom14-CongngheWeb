@@ -36,6 +36,8 @@ const login = async (req, res) => {
         .send({ errMessage: "Your email/password is wrong!" });
 
     result.token = auth.generateToken(result._id.toString(), result.email);
+
+    // Remove sensitive information from the result object before sending it in the response
     result.password = undefined;
     result.__v = undefined;
 
