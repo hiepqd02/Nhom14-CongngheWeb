@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
 const cors = require('cors');
-const userRouters = require('./routes/userRoutes')
+const UserRouters = require('./routes/userRoutes')
 // const taskRouters = require('./routes/taskRoute')
 const auth = require('./Middlewares/auth');
 const unless =require('express-unless');
@@ -30,7 +30,7 @@ app.use(
 	})
 );
 
-app.use('/user', userRouters);
+app.use('/user', UserRouters);
 app.use('/board', BoardRouter)
 
 // Board, list, card here
