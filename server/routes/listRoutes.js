@@ -2,6 +2,10 @@ const express = require('express');
 const ListRouter = express.Router();
 const listController = require('../Controllers/listController')
 
+ListRouter.get('/test', (req, res)=>{
+    res.send('list router is working')
+})
+
 ListRouter.post('/create', listController.create);
 ListRouter.get('/:id', listController.getAll);
 ListRouter.delete('/:boardId/:listId', listController.deleteById);

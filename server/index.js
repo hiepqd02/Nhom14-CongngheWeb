@@ -7,10 +7,12 @@ const UserRouters = require('./routes/userRoutes')
 const auth = require('./Middlewares/auth');
 const unless =require('express-unless');
 const BoardRouter = require('./routes/boardRoutes');
+const ListRouter = require('./routes/listRoutes')
+const CardRouter = require('./routes/cardRoutes')
 require('dotenv').config();
 require('./db');
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 app.use(bodyParser.json());
 app.use(cors());
 app.use(express.json());
@@ -32,6 +34,8 @@ app.use(
 
 app.use('/user', UserRouters);
 app.use('/board', BoardRouter)
+app.use('/list', ListRouter);
+app.use('/card', CardRouter);
 
 // Board, list, card here
 // app.use('/tasks', taskRouters)

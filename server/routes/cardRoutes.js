@@ -37,11 +37,11 @@ CardRouter.put('/:boardId/:listId/:cardId/update-dates', cardController.updateSt
 CardRouter.put('/:boardId/:listId/:cardId/update-date-completed', cardController.updateDateCompleted);
 
 // Attachment
-router.post('/:boardId/:listId/:cardId/add-attachment', cardController.addAttachment);
-router.put('/:boardId/:listId/:cardId/:attachmentId/update-attachment', cardController.updateAttachment);
-router.delete('/:boardId/:listId/:cardId/:attachmentId/delete-attachment', cardController.deleteAttachment);
+CardRouter.post('/:boardId/:listId/:cardId/add-attachment', cardController.addAttachment);
+CardRouter.put('/:boardId/:listId/:cardId/:attachmentId/update-attachment', cardController.updateAttachment);
+CardRouter.delete('/:boardId/:listId/:cardId/:attachmentId/delete-attachment', cardController.deleteAttachment);
 
 // Cover
-router.put('/:boardId/:listId/:cardId/update-cover', cardController.updateCover);
+CardRouter.put('/:boardId/:listId/:cardId/update-cover', cardController.updateCover);
 
 module.exports = CardRouter

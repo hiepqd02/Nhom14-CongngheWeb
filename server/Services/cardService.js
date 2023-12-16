@@ -1,7 +1,7 @@
-const cardModel = require('../Models/cardModel');
-const listModel = require('../Models/listModel');
-const boardModel = require('../Models/boardModel');
-const userModel = require('../Models/userModel');
+const cardModel = require('../Models/CardModel');
+const listModel = require('../Models/ListModel');
+const boardModel = require('../Models/BoardModel');
+const userModel = require('../Models/UserModel');
 const utils = require('./utils');
 const create = async (title,
      listId, boardId, user, callback) => {
@@ -52,7 +52,7 @@ const getCard = async (cardId, listId, boardId, user, callback) => {
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to update this card';
         }
@@ -74,7 +74,7 @@ const deleteById = async (cardId, listId, boardId, user, callback) => {
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to update this card';
         }
@@ -132,7 +132,7 @@ const addComment = async (cardId, listId, boardId, user, body, callback) => {
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to update this card';
         }
@@ -171,7 +171,7 @@ const updateComment = async (cardId, listId, boardId, commentId, user, body, cal
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to update this card';
         }
@@ -214,7 +214,7 @@ const deleteComment = async (cardId, listId, boardId, commentId, user, callback)
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to update this card';
         }
@@ -247,7 +247,7 @@ const addMember = async (cardId, listId, boardId, user, memberId, callback) => {
         const member = await userModel.findById(memberId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to add member this card';
         }
@@ -283,7 +283,7 @@ const deleteMember = async (cardId, listId, boardId, user, memberId, callback) =
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to add member this card';
         }
@@ -322,7 +322,7 @@ const createLabel = async (cardId, listId, boardId, user, label, callback) => {
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to add label this card';
         }
@@ -352,7 +352,7 @@ const updateLabel = async (cardId, listId, boardId, labelId, user, label, callba
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to update this card';
         }
@@ -382,7 +382,7 @@ const deleteLabel = async (cardId, listId, boardId, labelId, user, callback) => 
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to delete this label';
         }
@@ -406,7 +406,7 @@ const updateLabelSelection = async (cardId, listId, boardId, labelId, user, sele
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to update this card';
         }
@@ -434,7 +434,7 @@ const createChecklist = async (cardId, listId, boardId, user, title, callback) =
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to add Checklist this card';
         }
@@ -470,7 +470,7 @@ const deleteChecklist = async (cardId, listId, boardId, checklistId, user, callb
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to delete this checklist';
         }
@@ -502,7 +502,7 @@ const addChecklistItem = async (cardId, listId, boardId, user, checklistId, text
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to add item this checklist';
         }
@@ -547,7 +547,7 @@ const setChecklistItemCompleted = async (
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to set complete of this checklist item';
         }
@@ -592,7 +592,7 @@ const setChecklistItemText = async (cardId, listId, boardId, user, checklistId, 
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to set text of this checklist item';
         }
@@ -624,7 +624,7 @@ const deleteChecklistItem = async (cardId, listId, boardId, user, checklistId, c
         const board = await boardModel.findById(boardId);
 
         // Validate owner
-        const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+        const validate = await utils.validateCardOwners(card, list, board, user, false);
         if (!validate) {
             errMessage: 'You dont have permission to delete this checklist item';
         }
@@ -652,7 +652,7 @@ const updateStartDueDates = async (cardId, listId, boardId, user, startDate, due
 		const board = await boardModel.findById(boardId);
 
 		// Validate owner
-		const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+		const validate = await utils.validateCardOwners(card, list, board, user, false);
 		if (!validate) {
 			errMessage: 'You dont have permission to update date of this card';
 		}
@@ -677,7 +677,7 @@ const updateDateCompleted = async (cardId, listId, boardId, user, completed, cal
 		const board = await boardModel.findById(boardId);
 
 		// Validate owner
-		const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+		const validate = await utils.validateCardOwners(card, list, board, user, false);
 		if (!validate) {
 			errMessage: 'You dont have permission to update date of this card';
 		}
@@ -710,7 +710,7 @@ const addAttachment = async (cardId, listId, boardId, user, link, name, callback
 		const board = await boardModel.findById(boardId);
 
 		// Validate owner
-		const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+		const validate = await utils.validateCardOwners(card, list, board, user, false);
 		if (!validate) {
 			errMessage: 'You dont have permission to update date of this card';
 		}
@@ -744,7 +744,7 @@ const deleteAttachment = async (cardId, listId, boardId, user, attachmentId, cal
 		const board = await boardModel.findById(boardId);
 
 		// Validate owner
-		const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+		const validate = await utils.validateCardOwners(card, list, board, user, false);
 		if (!validate) {
 			errMessage: 'You dont have permission to delete this attachment';
 		}
@@ -782,7 +782,7 @@ const updateAttachment = async (cardId, listId, boardId, user, attachmentId, lin
 		const board = await boardModel.findById(boardId);
 
 		// Validate owner
-		const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+		const validate = await utils.validateCardOwners(card, list, board, user, false);
 		if (!validate) {
 			errMessage: 'You dont have permission to update attachment of this card';
 		}
@@ -811,7 +811,7 @@ const updateCover = async (cardId, listId, boardId, user, color, isSizeOne, call
 		const board = await boardModel.findById(boardId);
 
 		// Validate owner
-		const validate = await helperMethods.validateCardOwners(card, list, board, user, false);
+		const validate = await utils.validateCardOwners(card, list, board, user, false);
 		if (!validate) {
 			errMessage: 'You dont have permission to update attachment of this card';
 		}
