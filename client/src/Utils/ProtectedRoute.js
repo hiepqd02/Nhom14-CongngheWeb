@@ -6,7 +6,7 @@ const ProtectedRoute = ({ children }) => {
   const user = useSelector((state) => state.user);
   if (!user.isAuthenticated && !user.pending) {
     return (
-      <Navigate to='/login' />
+      <Navigate to='/' />
     );
   }
   if (user.isAuthenticated && !user.pending) { return children }

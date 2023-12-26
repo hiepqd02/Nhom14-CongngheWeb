@@ -24,7 +24,7 @@ const App = () => {
           <ProtectedRoute>
             <Board />
           </ProtectedRoute>} />
-        <Route path="/login" element={
+        <Route path="/" element={
           <FreeRoute><Login /></FreeRoute>
         } />
         <Route path="/register" element={

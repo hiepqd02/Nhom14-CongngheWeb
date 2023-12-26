@@ -27,7 +27,7 @@ export const register = async (
                 openAlert({
                     message: res.data.message,
                     severity: "success",
-                    nextRoute: "/login",
+                    nextRoute: "/",
                     duration: 1500,
                 })
             );

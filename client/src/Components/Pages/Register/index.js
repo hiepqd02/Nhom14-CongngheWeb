@@ -105,7 +105,7 @@ const Register = () => {
                   } />
               </div>
               <div className='login-btn' onClick={handleSubmit}>Register</div>
-              <div className='register'>Already have an account?<span onClick={() => navigate('/login')}>Login</span></div>
+              <div className='register'>Already have an account?<span onClick={() => navigate('/')}>Login</span></div>
             </form>
           </div>
 
