@@ -15,5 +15,5 @@ const Store = configureStore({
         list: listReducer,
         card: cardReducer,
     },
-}) 
+})
 export default Store;
