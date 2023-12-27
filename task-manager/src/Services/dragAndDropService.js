@@ -10,7 +10,7 @@ let submitCall = Promise.resolve();
 export const updateCardOrder = async (props, dispatch) => {
 	// SavedList stores the allLists before manupulating because...
 	// if the request will be failed, we need to restore allLists...
-	// because of consistency between server and client.
+	// because of consistency between server and task-manager.
 	let savedList = JSON.parse(JSON.stringify(props.allLists));
 
 	// Manupulate redux states first
@@ -74,7 +74,7 @@ export const updateCardOrder = async (props, dispatch) => {
 export const updateListOrder = async (props, dispatch) => {
 	// savedOrder stores the lists order in the board before manupulating because...
 	// if the request will be failed, we need to restore order...
-	// because of consistency between server and client.
+	// because of consistency between server and task-manager.
 	let savedOrder = JSON.parse(JSON.stringify(props.allLists));
 
 	// Manupulate the redux state first, we don't want to make the user wait because of the response time
