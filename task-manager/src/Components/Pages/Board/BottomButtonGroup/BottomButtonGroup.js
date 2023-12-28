@@ -1,6 +1,7 @@
 import React from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import * as style from './styled';
+import './BottomButtonGroup.css';
 
 const BottomButtonGroup = (props) => {
 	const { clickCallback, closeCallback, title } = props;
