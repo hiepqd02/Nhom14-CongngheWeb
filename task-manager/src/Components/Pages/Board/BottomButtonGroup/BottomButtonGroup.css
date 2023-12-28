@@ -1,0 +1,25 @@
+.Row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 0.3rem;
+    color: #6a6a6a;
+  }
+  
+  .AddListButton {
+    display: inline;
+    width: 6rem;
+    margin-left: -2px;
+  }
+  
+  .IconWrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .IconWrapper:hover {
+    color: black;
+  }
