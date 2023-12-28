@@ -1,13 +1,10 @@
-const express = require('express')
+const express = require("express");
+const userController = require("../Controllers/userController");
+const UserRouter = express.Router();
 
-const User = require('../models/UserSchema')
+UserRouter.post("/register", userController.register);
+UserRouter.post("/login", userController.login);
+UserRouter.get("/get-user", userController.getUser);
+UserRouter.post("/get-user-with-email", userController.getUserWithMail);
 
-const router = express.Router()
-
-
-router.get('/', (req, res)=>{
-    res.send("UserRouter")
-})
-// CRUD
-module.exports = router
-
+module.exports = UserRouter;
