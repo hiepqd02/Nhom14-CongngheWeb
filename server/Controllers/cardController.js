@@ -1,7 +1,5 @@
 const cardService = require('../Services/cardService');
 
-const utils = require('../Services/utils')
-
 const create = async (req, res) => {
 	// Deconstruct the params
 	const { title, listId, boardId } = req.body;
@@ -20,18 +18,6 @@ const create = async (req, res) => {
 	});
 };
 
-const getCard = async (req, res) => {
-	// Get params
-	const user = req.user;
-	const { boardId, listId, cardId } = req.params;
-
-	// Call the card service
-	await cardService.getCard(cardId, listId, boardId, user, (err, result) => {
-		if (err) return res.status(500).send(err);
-		return res.status(200).send(result);
-	});
-};
-
 const deleteById = async (req, res) => {
 	// deconstruct the params
 	const user = req.user;
@@ -44,6 +30,17 @@ const deleteById = async (req, res) => {
 	});
 };
 
+const getCard = async (req, res) => {
+	// Get params
+	const user = req.user;
+	const { boardId, listId, cardId } = req.params;
+
+	// Call the card service
+	await cardService.getCard(cardId, listId, boardId, user, (err, result) => {
+		if (err) return res.status(500).send(err);
+		return res.status(200).send(result);
+	});
+};
 
 const update = async (req, res) => {
 	// Get params
@@ -56,7 +53,6 @@ const update = async (req, res) => {
 		return res.status(200).send(result);
 	});
 };
-
 
 const addComment = async (req, res) => {
 	// Get params
@@ -312,6 +308,7 @@ const updateDateCompleted = async (req, res) => {
 		}
 	);
 };
+
 const addAttachment = async (req, res) => {
 	// Get params
 	const user = req.user;
@@ -398,31 +395,30 @@ const updateCover = async (req, res) => {
 	);
 };
 
-
-module.exports ={
-    create,
-    getCard,
-    deleteById,
-    update,
-    addComment,
-    updateComment,
-    deleteComment,
-    addMember,
-    deleteMember,
-    createLabel,
-    updateLabel,
-    deleteLabel,
-    updateLabelSelection,
-    createChecklist,
-    deleteChecklist,
-    addChecklistItem,
-    setChecklistItemCompleted,
-    setChecklistItemText,
-    deleteChecklistItem,
-    updateStartDueDates,
-    updateDateCompleted,
-    addAttachment,
-    updateAttachment,
-    deleteAttachment,
-    updateCover
-}
+module.exports = {
+	create,
+	deleteById,
+	getCard,
+	update,
+	addComment,
+	updateComment,
+	deleteComment,
+	addMember,
+	deleteMember,
+	createLabel,
+	updateLabel,
+	deleteLabel,
+	updateLabelSelection,
+	createChecklist,
+	deleteChecklist,
+	addChecklistItem,
+	setChecklistItemCompleted,
+	setChecklistItemText,
+	deleteChecklistItem,
+	updateStartDueDates,
+	updateDateCompleted,
+	addAttachment,
+	deleteAttachment,
+	updateAttachment,
+	updateCover,
+};

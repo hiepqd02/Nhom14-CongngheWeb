@@ -1,13 +1,6 @@
-const createRandomHexColor = () => {
-	const values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
-	let hex = '#';
-
-	for (let i = 0; i < 6; i++) {
-		const index = Math.floor(Math.random() * values.length);
-		hex += values[index];
-	}
-	return hex.toString();
-};
+const cardModel = require('../Models/cardModel');
+const listModel = require('../Models/listModel');
+const boardModel = require('../Models/boardModel');
 
 const validateCardOwners = async (card = null, list, board, user, isCreate = false) => {
 	const validate = isCreate ? true : list.cards.filter((item) => item.toString() === card._id.toString());
@@ -26,8 +19,19 @@ const labelsSeed = [
 	{ text: '', color: '#0079bf', backColor: '#055a8c', selected: false },
 ];
 
+const createRandomHexColor = () => {
+	const values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F'];
+	let hex = '#';
+
+	for (let i = 0; i < 6; i++) {
+		const index = Math.floor(Math.random() * values.length);
+		hex += values[index];
+	}
+	return hex.toString();
+};
+
 module.exports = {
-    createRandomHexColor,
 	validateCardOwners,
-	labelsSeed
-}
+	labelsSeed,
+	createRandomHexColor,
+};

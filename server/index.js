@@ -2,13 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
 const cors = require('cors');
-const UserRouters = require('./routes/userRoutes')
+const UserRouters = require('./Routes/userRoute')
 // const taskRouters = require('./routes/taskRoute')
 const auth = require('./Middlewares/auth');
 const unless =require('express-unless');
-const BoardRouter = require('./routes/boardRoutes');
-const ListRouter = require('./routes/listRoutes')
-const CardRouter = require('./routes/cardRoutes')
+const BoardRouter = require('./routes/boardRoute');
+const ListRouter = require('./routes/listRoute')
+const CardRouter = require('./routes/cardRoute')
 require('dotenv').config();
 require('./db');
 

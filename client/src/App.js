@@ -1,6 +1,6 @@
 import Login from "./Components/Pages/Login";
 import Register from "./Components/Pages/Register";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import {Route, BrowserRouter, Switch, Routes} from "react-router-dom";
 import Boards from "./Components/Pages/Boards";
 import ProtectedRoute from "./Utils/ProtectedRoute";
 import Board from "./Components/Pages/Board";
@@ -25,14 +25,13 @@ const App = () => {
             <Board />
           </ProtectedRoute>} />
         <Route path="/" element={
-          <FreeRoute><Login /></FreeRoute>
+          <FreeRoute><Login/></FreeRoute>
         } />
         <Route path="/register" element={
           <FreeRoute> <Register /></FreeRoute>
         } />
       </Routes>
       <AlertSnackBar />
-
     </BrowserRouter>
   );
 };

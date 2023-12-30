@@ -1,10 +1,10 @@
-const listModel = require('../Models/ListModel');
-const boardModel = require('../Models/BoardModel');
-const cardModel = require('../Models/CardModel');
+const listModel = require('../Models/listModel');
+const boardModel = require('../Models/boardModel');
+const cardModel = require('../Models/cardModel');
 
-const create = async (model, user, callback)=>{
-    try{
-        // Create new List
+const create = async (model, user, callback) => {
+	try {
+		// Create new List
 		const tempList = await listModel(model);
 
 		// Save the new List
@@ -29,22 +29,19 @@ const create = async (model, user, callback)=>{
 
 		// Return new list
 		return callback(false, newList);
-    }catch(error){
-        return callback({errMessage: "Something went wrong", details:error.message})
-    }
-}
+	} catch (error) {
+		// Return error message
+		return callback({ errMessage: 'Something went wrong', details: error.message });
+	}
+};
 
 const getAll = async (boardId, callback) => {
 	try {
-
-		// Get specific card info
-		// get lists whose owner id equals to boardId param
-		// Owner is board
+		//get lists whose owner id equals to boardId param
 		let lists = await listModel
 			.find({ owner: { $in: boardId } })
 			.populate({ path: 'cards' }) /* { path: 'cards', select: 'title' }) */
 			.exec();
-
 
 		// Order the lists
 		const board = await boardModel.findById(boardId);
@@ -58,7 +55,6 @@ const getAll = async (boardId, callback) => {
 	}
 };
 
-
 const deleteById = async (listId, boardId, user, callback) => {
 	try {
 		// Get board to check the parent of list is this board
@@ -66,7 +62,7 @@ const deleteById = async (listId, boardId, user, callback) => {
 
 		// Validate the parent of the list
 		const validate = board.lists.filter((list) => list.id === listId);
-		if (!validate) return callback({ errMessage: 'List or board information are wrong' });
+		if (!validate) return callback({ errMessage: 'List or board informations are wrong' });
 
 		// Validate whether the owner of the board is the user who sent the request.
 		if (!user.boards.filter((board) => board === boardId))
@@ -91,49 +87,6 @@ const deleteById = async (listId, boardId, user, callback) => {
 		await cardModel.deleteMany({ owner: listId });
 
 		return callback(false, result);
-	} catch (error) {
-		return callback({ errMessage: 'Something went wrong', details: error.message });
-	}
-};
-const updateListTitle = async (listId, boardId, user, title, callback) => {
-	try {
-		// Get board to check the parent of list is this board
-		const board = await boardModel.findById(boardId);
-		const list = await listModel.findById(listId.toString());
-		// Validate the parent of the list, check client API call
-		const validate = board.lists.filter((list) => list.id === listId);
-		if (!validate) return callback({ errMessage: 'List or board informations are wrong' });
-
-		// Validate whether the owner of the board is the user who sent the request.
-		if (!user.boards.filter((board) => board === boardId))
-			return callback({ errMessage: 'You cannot delete a list that does not hosted by your boards' });
-
-		// Change title of list
-		list.title = title;
-		await list.save();
-
-		return callback(false, { message: 'Success' });
-	} catch (error) {
-		return callback({ errMessage: 'Something went wrong', details: error.message });
-	}
-};
-
-
-
-const updateListOrder = async (boardId, sourceIndex, destinationIndex, listId, callback) => {
-	try {
-		// Validate the parent board of the lists
-		const board = await boardModel.findById(boardId);
-		let validate = board.lists.filter((list) => list.id === listId);
-
-		if (!validate) return callback({ errMessage: 'List or board informations are wrong' });
-
-		// Change list order
-		board.lists.splice(sourceIndex, 1);
-		board.lists.splice(destinationIndex, 0, listId);
-		await board.save();
-
-		return callback(false, { message: 'Success' });
 	} catch (error) {
 		return callback({ errMessage: 'Something went wrong', details: error.message });
 	}
@@ -182,12 +135,53 @@ const updateCardOrder = async (boardId, sourceId, destinationId, destinationInde
 	}
 };
 
+const updateListOrder = async (boardId, sourceIndex, destinationIndex, listId, callback) => {
+	try {
+		// Validate the parent board of the lists
+		const board = await boardModel.findById(boardId);
+		let validate = board.lists.filter((list) => list.id === listId);
 
-module.exports ={
-    create,
-    getAll,
-    deleteById,
-    updateListTitle,
+		if (!validate) return callback({ errMessage: 'List or board informations are wrong' });
+
+		// Change list order
+		board.lists.splice(sourceIndex, 1);
+		board.lists.splice(destinationIndex, 0, listId);
+		await board.save();
+
+		return callback(false, { message: 'Success' });
+	} catch (error) {
+		return callback({ errMessage: 'Something went wrong', details: error.message });
+	}
+};
+
+const updateListTitle = async (listId, boardId, user, title, callback) => {
+	try {
+		// Get board to check the parent of list is this board
+		const board = await boardModel.findById(boardId);
+		const list = await listModel.findById(listId.toString());
+		// Validate the parent of the list
+		const validate = board.lists.filter((list) => list.id === listId);
+		if (!validate) return callback({ errMessage: 'List or board informations are wrong' });
+
+		// Validate whether the owner of the board is the user who sent the request.
+		if (!user.boards.filter((board) => board === boardId))
+			return callback({ errMessage: 'You cannot delete a list that does not hosted by your boards' });
+
+		// Change title of list
+		list.title = title;
+		await list.save();
+
+		return callback(false, { message: 'Success' });
+	} catch (error) {
+		return callback({ errMessage: 'Something went wrong', details: error.message });
+	}
+};
+
+module.exports = {
+	create,
+	getAll,
+	deleteById,
+	updateCardOrder,
 	updateListOrder,
-	updateCardOrder
-}
+	updateListTitle,
+};

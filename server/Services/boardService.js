@@ -1,5 +1,6 @@
-const boardModel = require('../Models/BoardModel');
-const userModel = require('../Models/UserModel');
+const { findOne } = require('../Models/boardModel');
+const boardModel = require('../Models/boardModel');
+const userModel = require('../Models/userModel');
 
 const create = async (req, callback) => {
 	try {
@@ -24,7 +25,7 @@ const create = async (req, callback) => {
 			role: 'owner',
 		});
 
-		// Save newBoard's id to boards of members 
+		// Save newBoard's id to boards of members and,
 		// Add ids of members to newBoard
 		await Promise.all(
 			members.map(async (member) => {

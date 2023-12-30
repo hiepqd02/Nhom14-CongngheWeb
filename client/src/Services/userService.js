@@ -1,8 +1,20 @@
 import axios from "axios";
-import setBearer from "../Utils/SetBearer";
-import { loadFailure, loadStart, loadSuccess, loginFailure, loginStart, loginSuccess, registrationEnd, registrationStart } from "../Redux/Slices/userSlices";
+import {
+    registrationStart,
+    registrationEnd,
+    loginStart,
+    loginFailure,
+    loginSuccess,
+    loadSuccess,
+    loadFailure,
+    loadStart,
+    fetchingStart,
+    fetchingFinish,
+} from "../Redux/Slices/userSlices";
 import { openAlert } from "../Redux/Slices/alertSlice";
+import setBearer from "../Utils/SetBearer";
 const baseUrl = "http://localhost:3001/user/";
+
 export const register = async (
     { name, surname, email, password, repassword },
     dispatch
@@ -27,7 +39,7 @@ export const register = async (
                 openAlert({
                     message: res.data.message,
                     severity: "success",
-                    nextRoute: "/",
+                    nextRoute: "/login",
                     duration: 1500,
                 })
             );
@@ -86,3 +98,33 @@ export const loadUser = async (dispatch) => {
     }
 };
 
+export const getUserFromEmail = async (email, dispatch) => {
+    dispatch(fetchingStart());
+    if (!email) {
+        dispatch(
+            openAlert({
+                message: "Please write an email to invite",
+                severity: "warning",
+            })
+        );
+        dispatch(fetchingFinish());
+        return null;
+    }
+
+    try {
+        const res = await axios.post(baseUrl + "get-user-with-email", { email });
+        dispatch(fetchingFinish());
+        return res.data;
+    } catch (error) {
+        dispatch(
+            openAlert({
+                message: error?.response?.data?.errMessage
+                    ? error.response.data.errMessage
+                    : error.message,
+                severity: "error",
+            })
+        );
+        dispatch(fetchingFinish());
+        return null;
+    }
+};

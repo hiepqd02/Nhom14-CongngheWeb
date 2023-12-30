@@ -45,6 +45,21 @@ export const userSlice = createSlice({
         loadFailure: (state) => {
             state.pending = false;
         },
+        logout: (state) => {
+            state.isAuthenticated = false;
+            state.userInfo = null;
+            state.token = null;
+            localStorage.removeItem("token");
+        },
+        fetchingStart: (state)=>{
+            state.loading = true;
+        },
+        fetchingFinish: (state) => {
+            state.loading = false;
+        },
+        addNewBoard: (state,action) => {
+            state.userInfo.boards.unshift(action.payload);
+        }
     },
 });
 
@@ -57,5 +72,9 @@ export const {
     loadStart,
     loadSuccess,
     loadFailure,
+    logout,
+    fetchingStart,
+    fetchingFinish,
+    addNewBoard
 } = userSlice.actions;
 export default userSlice.reducer;

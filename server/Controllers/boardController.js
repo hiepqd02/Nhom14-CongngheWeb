@@ -46,6 +46,7 @@ const getActivityById = async (req, res) => {
 };
 
 const updateBoardTitle = async (req, res) => {
+	// Validate whether params.id is in the user's boards or not
 	const validate = req.user.boards.filter((board) => board === req.params.id);
 	if (!validate)
 		return res
@@ -61,6 +62,7 @@ const updateBoardTitle = async (req, res) => {
 };
 
 const updateBoardDescription = async (req, res) => {
+	// Validate whether params.id is in the user's boards or not
 	const validate = req.user.boards.filter((board) => board === req.params.id);
 	if (!validate)
 		return res
@@ -76,6 +78,7 @@ const updateBoardDescription = async (req, res) => {
 };
 
 const updateBackground = async (req, res) => {
+	// Validate whether params.id is in the user's boards or not
 	const validate = req.user.boards.filter((board) => board === req.params.id);
 	if (!validate)
 		return res
@@ -91,6 +94,7 @@ const updateBackground = async (req, res) => {
 };
 
 const addMember = async (req, res) => {
+	// Validate whether params.id is in the user's boards or not
 	const validate = req.user.boards.filter((board) => board === req.params.id);
 	if (!validate)
 		return res

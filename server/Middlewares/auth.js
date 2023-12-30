@@ -1,10 +1,9 @@
 const jwt = require("jsonwebtoken");
-const userModel = require("../Models/UserModel");
+const userModel = require("../Models/userModel");
 const generateToken = (id, email) => {
-  // const token = jwt.sign({ id, email }, process.env.JWT_SECRET, {
-  //   expiresIn: process.env.TOKEN_EXPIRE_TIME,
-  // });
-  const token = jwt.sign({id, email}, process.env.JWT_SECRET)
+  const token = jwt.sign({ id, email }, process.env.JWT_SECRET, {
+    expiresIn: process.env.TOKEN_EXPIRE_TIME,
+  });
   return token.toString();
 };
 
