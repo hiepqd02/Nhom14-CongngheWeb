@@ -86,3 +86,30 @@ export const loadUser = async (dispatch) => {
     }
 };
 
+
+export const getUserFromEmail = async (email, dispatch) => {
+    if (!email) {
+        dispatch(
+            openAlert({
+                message: "Please write an email to invite",
+                severity: "warning",
+            })
+        );
+        return null;
+    }
+
+    try {
+        const res = await axios.post(baseUrl + "get-user-with-email", { email });
+        return res.data;
+    } catch (error) {
+        dispatch(
+            openAlert({
+                message: error?.response?.data?.errMessage
+                    ? error.response.data.errMessage
+                    : error.message,
+                severity: "error",
+            })
+        );
+        return null;
+    }
+};

@@ -45,6 +45,9 @@ export const userSlice = createSlice({
         loadFailure: (state) => {
             state.pending = false;
         },
+        addNewBoard: (state, action) => {
+            state.userInfo.boards.unshift(action.payload);
+        }
     },
 });
 
@@ -57,5 +60,6 @@ export const {
     loadStart,
     loadSuccess,
     loadFailure,
+    addNewBoard
 } = userSlice.actions;
 export default userSlice.reducer;
