@@ -1,0 +1,83 @@
+.boards-container {
+    background-image: url('https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2400x1600/a651551a5214cb84963366cf9eaacb40/photo-1636207543865-acf3ad382295.jpg');
+    background-position: 50%;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .wrapper {
+        margin-top: 50px;
+        width: 100%;
+        height: calc(100vh - 50px);
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+
+        .tittle {
+            font-weight: 400;
+            font-size: 24px;
+            text-align: center;
+            width: 100vw;
+            margin-bottom: 16px;
+            color: lightblue;
+            text-shadow: 3px 0px 7px rgba(81, 67, 21, 0.8), -3px 0px 7px rgba(81, 67, 21, 0.8),
+                0px 4px 7px rgba(81, 67, 21, 0.8);
+            user-select: none;
+
+        }
+
+        .list-boards {
+            display: flex;
+            gap: 8px;
+
+            .board {
+                color: white;
+                padding: 8px;
+                width: 200px;
+                height: 120px;
+                border-radius: 5px;
+                background-position: center center;
+                background-size: cover;
+                box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+                opacity: 88%;
+                cursor: pointer;
+                will-change: opacity;
+                transition: opacity 450ms;
+
+                &:hover {
+                    opacity: 100%;
+                    transition: opacity 150ms;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .add-board {
+            background-image: linear-gradient(to right, #0b486b 0%, #f56217 51%, #0b486b 100%);
+            font-size: 20px;
+            transition: 2s;
+            opacity: 65%;
+            background-size: 200% auto;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            width: 200px;
+            height: 60px;
+
+            &:hover {
+                cursor: pointer;
+                background-position: right center;
+                color: #fff;
+                transition: 400ms ease-in;
+            }
+        }
+    }
+}
