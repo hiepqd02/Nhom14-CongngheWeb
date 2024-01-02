@@ -28,6 +28,12 @@ export const userSlice = createSlice({
             state.token = action.payload.user.token;
             localStorage.setItem("token", action.payload.user.token);
         },
+        logout: (state) => {
+            state.isAuthenticated = false;
+            state.userInfo = null;
+            state.token = null;
+            localStorage.removeItem("token");
+          },
         loginFailure: (state) => {
             state.pending = false;
             state.isAuthenticated = false;
@@ -60,6 +66,7 @@ export const {
     loadStart,
     loadSuccess,
     loadFailure,
-    addNewBoard
+    addNewBoard,
+    logout
 } = userSlice.actions;
 export default userSlice.reducer;

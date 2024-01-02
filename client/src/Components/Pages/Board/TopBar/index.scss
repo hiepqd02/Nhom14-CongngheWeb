@@ -1,0 +1,144 @@
+// @import '../../../../BreakPoints';
+
+// $breakpoint-xs: xs; // Assuming xs is defined in your BreakPoints file
+
+$top-bar-height: 52px;
+
+$top-bar-gap: 0.3rem;
+$top-bar-gap-xs: 0.1rem;
+
+$left-wrapper-gap: 1rem;
+
+$invite-button-height: 2rem;
+$invite-button-gap: 0.5rem;
+
+$text-span-font-size: 0.85rem;
+
+$board-name-input-height: 1.75rem;
+$board-name-input-font-size: 1.1rem;
+$board-name-input-min-width: 6.5rem;
+$board-name-input-max-width: 10rem;
+
+$placeholder-color: #d0d0d0;
+
+$transition-duration: 250ms;
+$transition-ease: ease;
+
+$hover-background-color: #00599f;
+$button-background-color: #0079bf;
+
+$white: #ffffff;
+$black: #000000;
+
+$top-bar-padding: 1rem;
+
+$outline-color: rgba(255, 255, 255, 0.25);
+$outline-hover-color: #0079bf;
+
+top-bar, left-wrapper, right-wrapper, invite-button, text-span, board-name-input {
+  display: flex;
+}
+
+top-bar {
+  height: $top-bar-height;
+  width: 100%;
+  flex-direction: column;
+  align-items: space-between;
+  padding: 0 $top-bar-padding;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $top-bar-gap;
+
+  // @include #{$breakpoint-xs} {
+  //   gap: $top-bar-gap-xs;
+  // }
+}
+
+left-wrapper {
+  flex: 3;
+  width: 75%;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  gap: $left-wrapper-gap;
+}
+
+right-wrapper {
+  flex: 1;
+  height: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+invite-button {
+  border: none;
+  height: $invite-button-height;
+  color: $white;
+  padding: 0 $top-bar-padding;
+  align-items: center;
+  gap: $invite-button-gap;
+  border-radius: 3px;
+  background-color: $button-background-color;
+  cursor: pointer;
+  transition: $transition-duration $transition-ease;
+
+  &:hover {
+    background-color: $hover-background-color;
+  }
+}
+
+text-span {
+  font-size: $text-span-font-size;
+
+  // @include #{$breakpoint-xs} {
+  //   display: none;
+  // }
+}
+
+board-name-input {
+  height: $board-name-input-height;
+  background-color: rgba($white, 0.25);
+  border: none;
+  border-radius: 1px;
+  font-size: $board-name-input-font-size;
+  text-align: center;
+  min-width: $board-name-input-min-width;
+  max-width: $board-name-input-max-width;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  //width: #{'#{props.value.length * 0.75}rem'};
+  font-weight: 600;
+  color: $white;
+  outline: 2px solid $outline-color;
+  transition: $transition-duration $transition-ease;
+  cursor: pointer;
+
+  &:focus {
+    background-color: $white;
+    outline: 2px solid $outline-hover-color;
+    color: $black;
+    cursor: text;
+
+    &:hover {
+      background-color: $white;
+      outline: 2px solid $outline-hover-color;
+      color: $black;
+      cursor: text;
+    }
+  }
+
+  &:hover {
+    background-color: rgba($white, 0.5);
+    outline: 2px solid rgba($white, 0.5);
+  }
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+
+  // @include #{$breakpoint-xs} {
+  //   max-width: 8rem;
+  // }
+}

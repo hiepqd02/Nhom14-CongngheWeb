@@ -1,0 +1,209 @@
+@import '../../../../../BreakPoints';
+
+$breakpoint-xs: xs; // Assuming xs is defined in your BreakPoints file
+
+$container-border-color: white;
+$container-height: fit-content;
+$container-max-height: 98%;
+$container-min-width: 15rem;
+$container-width: 15rem;
+$container-max-width: 16rem;
+$container-margin: 0rem 0.2rem;
+$container-padding: 0.3rem;
+$container-background-color: #ebecf0;
+$container-border-radius: 3px;
+
+$header-width: 100%;
+$header-gap: 0.3rem;
+
+$title-placeholder-padding-left: 0.3rem;
+$title-input-padding-left: 0.3rem;
+$title-input-padding-bottom: 0.2rem;
+$title-input-focus-background-color: white;
+$title-input-focus-outline-color: #0079bf;
+
+$card-container-height: 100%;
+$card-container-width: 100%;
+
+$card-wrapper-overflow-x: hidden;
+$card-wrapper-overflow-y: auto;
+$card-wrapper-padding: 0.1rem 0.1rem 0.1rem 0rem;
+$card-wrapper-max-height: 70.6vh;
+$card-wrapper-max-height-dock: 73.5vh;
+$card-wrapper-scrollbar-height: 0.75rem;
+$card-wrapper-scrollbar-width: 0.5rem;
+$card-wrapper-scrollbar-track-background: rgba(255, 255, 255, 0.4);
+$card-wrapper-scrollbar-thumb-background: rgba(0, 0, 0, 0.2);
+$card-wrapper-scrollbar-thumb-hover-background: rgba(0, 0, 0, 0.2);
+
+$footer-button-background-color: transparent;
+$footer-button-border: none;
+$footer-button-border-radius: 3px;
+$footer-button-gap: 0.3rem;
+$footer-button-color: #636363;
+$footer-button-hover-background-color: rgba(0, 0, 0, 0.1);
+$footer-button-transition-duration: 150ms;
+
+$span-font-size: 0.85rem;
+
+$add-title-card-container-margin-top: 0.2rem;
+$add-title-card-container-padding: 0rem 0.2rem;
+$add-title-card-container-min-width: 14.7rem;
+$add-title-card-container-width: 100%;
+$add-title-card-container-gap: 0.5rem;
+
+$title-new-card-input-border: 2px solid transparent;
+$title-new-card-input-border-radius: 3px;
+$title-new-card-input-resize: none;
+$title-new-card-input-font-size: 0.75rem;
+$title-new-card-input-color: #000;
+$title-new-card-input-padding: 0.4rem 0.5rem;
+$title-new-card-input-min-height: 4rem;
+$title-new-card-input-max-height: 7rem;
+$title-new-card-input-transition-duration: 500ms;
+$title-new-card-input-outline: none;
+$title-new-card-input-focus-border: 2px solid #0079bf;
+$title-new-card-input-placeholder-font-weight: 600;
+$title-new-card-input-placeholder-color: rgba(0, 0, 0, 0.5);
+
+container, header, title-placeholder, title-input, card-container, card-wrapper, footer-button, span, add-title-card-container, title-new-card-input {
+  display: flex;
+}
+
+container {
+  box-sizing: content-box;
+  border: 1px solid $container-border-color;
+  height: $container-height;
+  max-height: $container-max-height;
+  min-width: $container-min-width;
+  width: $container-width;
+  max-width: $container-max-width;
+  margin: $container-margin;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem;
+  border-radius: $container-border-radius;
+  background-color: $container-background-color;
+  padding: $container-padding;
+}
+
+header {
+  width: $header-width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $header-gap;
+}
+
+title-placeholder {
+  display: block;
+  width: 100%;
+  padding-left: $title-placeholder-padding-left;
+  border: none;
+  border-radius: 1px;
+  background-color: transparent;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #000;
+  outline: none;
+  cursor: pointer;
+}
+
+title-input {
+  display: none;
+  width: 100%;
+  padding-left: $title-input-padding-left;
+  padding-bottom: $title-input-padding-bottom;
+  border: none;
+  border-radius: 1px;
+  background-color: transparent;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #000;
+  outline: none;
+  cursor: pointer;
+
+  &:focus {
+    background-color: $title-input-focus-background-color;
+    outline: $title-input-focus-outline-color;
+    cursor: text;
+  }
+}
+
+card-container {
+  height: $card-container-height;
+  width: $card-container-width;
+  box-sizing: content-box;
+}
+
+card-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  box-sizing: content-box;
+  overflow-x: $card-wrapper-overflow-x;
+  overflow-y: $card-wrapper-overflow-y;
+  height: fit-content;
+  max-height: $card-wrapper-max-height;
+  justify-content: flex-start;
+  padding: $card-wrapper-padding;
+  width: 100%;
+
+  @include #{$breakpoint-xs} {
+    max-height: $card-wrapper-max-height-dock;
+  }
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: $card-wrapper-scrollbar-height;
+    width: $card-wrapper-scrollbar-width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $card-wrapper-scrollbar-track-background;
+    margin-left: 5px;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $card-wrapper-scrollbar-thumb-background;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $card-wrapper-scrollbar-thumb-hover-background;
+  }
+}
+
+footer-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: $footer-button-background-color;
+  border: $footer-button-border;
+  border-radius: $footer-button-border-radius;
+  align-self: flex-end;
+  justify-self: flex-end;
+  cursor: pointer;
+  gap: $footer-button-gap;
+  color: $footer-button-color;
+  transition: $footer-button-transition-duration ease-in;
+
+  &:hover {
+    background-color: $footer-button-hover-background-color;
+  }
+}
+
+span {
+  font-size: $span-font-size;
+}
+
+add-title-card-container {
+  box-sizing: border-box;
+  margin-top: $add-title-card-container-margin-top;
+  padding: $add-title-card-container-padding;
+  min-width: $add-title-card-container-min
+}

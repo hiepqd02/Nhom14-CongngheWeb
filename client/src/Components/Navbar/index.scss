@@ -1,0 +1,76 @@
+.navbar-container {
+    height: 72px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(24px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    gap: 8px;
+
+    .left-content {
+        .logo {
+            color: #000;
+            text-shadow: -5px 5px 0 #fff;
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+
+    .right-content {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .search-bar {
+            width: 300px;
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            align-items: center;
+            height: 32px;
+            border-radius: 3px;
+            background: rgba(33, 33, 33, .04);
+            border: 1px solid rgba(33, 33, 33, .12);
+            padding: 6px;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.4);
+            }
+
+            .icon {
+                display: flex;
+                align-items: center;
+            }
+
+            input {
+                width: 100%;
+                box-sizing: content-box;
+                font-size: 16px;
+                font-weight: 100;
+                border: none;
+                background-color: transparent;
+                outline: none;
+                height: 16px;
+                overflow: hidden;
+
+                &::placeholder {}
+
+                &:focus {
+                    font-weight: 600;
+
+                    &::placeholder {
+                        color: transparent;
+                    }
+                }
+            }
+        }
+
+        .profile-box {}
+    }
+}

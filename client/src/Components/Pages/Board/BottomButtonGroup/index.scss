@@ -1,0 +1,28 @@
+@import "../TopBar/index.scss";
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 0.3rem;
+  color: #6a6a6a;
+}
+
+.add-list-button {
+  @extend .invite-button; // Assuming you want to extend the styles from InviteButton
+  display: inline;
+  width: 6rem;
+  margin-left: -2px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+  }
+}
