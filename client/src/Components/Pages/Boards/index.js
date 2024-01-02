@@ -5,6 +5,7 @@ import { getBoards } from "../../../Services/boardsService";
 import CreateBoard from "../../Modals/CreateBoardModal/CreateBoard";
 import { useNavigate } from "react-router-dom";
 import './index.scss'
+import Navbar from "../../Navbar";
 
 const Boards = () => {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ const Boards = () => {
     <>
       {pending && <div>Loading</div>}
       <div className="boards-container">
+        <Navbar />
         <div className="wrapper">
           <div className="tittle">My Boards</div>
           <div className="list-boards">
