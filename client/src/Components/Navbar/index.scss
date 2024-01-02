@@ -14,9 +14,12 @@
     gap: 8px;
 
     .left-content {
-        .logo {}
-
-        .dropdown-container {}
+        .logo {
+            color: #000;
+            text-shadow: -5px 5px 0 #fff;
+            font-size: 24px;
+            font-weight: 700;
+        }
     }
 
     .right-content {
@@ -30,32 +33,33 @@
             flex-direction: row;
             gap: 5px;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.3);
             height: 32px;
-            box-sizing: border-box;
             border-radius: 3px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            padding: 0.1rem 0.5rem;
-            color: white;
+            background: rgba(33, 33, 33, .04);
+            border: 1px solid rgba(33, 33, 33, .12);
+            padding: 6px;
 
             &:hover {
                 background-color: rgba(255, 255, 255, 0.4);
+            }
+
+            .icon {
+                display: flex;
+                align-items: center;
             }
 
             input {
                 width: 100%;
                 box-sizing: content-box;
                 font-size: 16px;
+                font-weight: 100;
                 border: none;
-                color: white;
                 background-color: transparent;
                 outline: none;
                 height: 16px;
                 overflow: hidden;
 
-                &::placeholder {
-                    color: white;
-                }
+                &::placeholder {}
 
                 &:focus {
                     font-weight: 600;

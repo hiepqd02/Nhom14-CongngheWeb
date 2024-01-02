@@ -6,6 +6,7 @@ import CreateBoard from "../../Modals/CreateBoardModal/CreateBoard";
 import { useNavigate } from "react-router-dom";
 import './index.scss'
 import Navbar from "../../Navbar";
+import Loading from "../../Loading";
 
 const Boards = () => {
   const dispatch = useDispatch();
@@ -28,12 +29,13 @@ const Boards = () => {
   useEffect(() => {
     document.title = "Boards | Boostme"
   }, [])
+  console.log(searchString);
 
   return (
     <>
-      {pending && <div>Loading</div>}
+      {pending && <Loading />}
       <div className="boards-container">
-        <Navbar />
+        <Navbar searchString={searchString} setSearchString={setSearchString} />
         <div className="wrapper">
           <div className="tittle">My Boards</div>
           <div className="list-boards">
