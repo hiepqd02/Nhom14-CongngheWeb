@@ -1,0 +1,122 @@
+/* TopBar */
+.TopBar {
+    height: 52px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    padding: 0rem 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  
+  @media (max-width: 600px) {
+    .TopBar {
+      gap: 0.1rem;
+    }
+  }
+  
+  /* LeftWrapper */
+  .LeftWrapper {
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+    width: 75%;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    gap: 1rem;
+  }
+  
+  /* RightWrapper */
+  .RightWrapper {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  /* InviteButton */
+  .InviteButton {
+    display: flex;
+    border: none;
+    height: 2rem;
+    color: white;
+    padding: 0rem 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 3px;
+    background-color: #0079bf;
+    cursor: pointer;
+    transition: 250ms ease;
+  }
+  
+  .InviteButton:hover {
+    background-color: #00599f;
+  }
+  
+  /* TextSpan */
+  .TextSpan {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 600px) {
+    .TextSpan {
+      display: none;
+    }
+  }
+  
+  /* BoardNameInput */
+  .BoardNameInput {
+    height: 1.75rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    border: none;
+    border-radius: 1px;
+    font-size: 1.1rem;
+    text-align: center;
+    min-width: 6.5rem;
+    max-width: 10rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /*width: ${(props) => props.value.length * 0.75 + 'rem'};*/
+    font-weight: 600;
+    color: white;
+    outline: 2px solid rgba(255, 255, 255, 0.25);
+    transition: 250ms ease;
+    cursor: pointer;
+  }
+  
+  .BoardNameInput:focus {
+    background-color: white;
+    outline: 2px solid #0079bf;
+    color: black;
+    cursor: text;
+  }
+  
+  .BoardNameInput:focus:hover {
+    background-color: white;
+    outline: 2px solid #0079bf;
+    color: black;
+    cursor: text;
+  }
+  
+  .BoardNameInput:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .BoardNameInput::placeholder {
+    color: #d0d0d0;
+  }
+  
+  @media (max-width: 600px) {
+    .BoardNameInput {
+      maxWidth: 8rem;
+    }
+  }
+  
