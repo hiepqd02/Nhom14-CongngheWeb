@@ -13,7 +13,7 @@ import {
 	TextArea,
 } from './styled';
 import CheckIcon from '@mui/icons-material/LibraryAddCheckOutlined';
-import BottomButtonGroup from '../../../Pages/BoardPage/BoardComponents/BottomButtonGroup/BottomButtonGroup.js';
+import BottomButtonGroup from '../../../Pages/Board/BottomButtonGroup';
 import Checkbox from '../ReUsableComponents/Checkbox';
 import Button from '../ReUsableComponents/Button';
 import Progressbar from '../ReUsableComponents/Progressbar';

@@ -74,19 +74,19 @@ const List = (props) => {
 	}, [clickFooter]);
 
 	return (
-		<div className="your-container-class">
+		<div className="container">
 		  <Draggable draggableId={props.info._id} index={props.index}>
 			{(provided, snapshot) => (
 			  <div
 				{...provided.draggableProps}
 				ref={provided.innerRef}
-				className={`your-container-class ${snapshot.isDragging ? 'dragging' : ''}`}
+				className={`container ${snapshot.isDragging ? 'dragging' : ''}`}
 			  >
 				<div
-				  className={`your-header-class ${snapshot.isDragging ? 'dragging' : ''}`}
+				  className={`header ${snapshot.isDragging ? 'dragging' : ''}`}
 				  {...provided.dragHandleProps}
 				>
-				  <div className="your-title-placeholder-class" onClick={() => setClickTitle(true)}>
+				  <div className="title-placeholder" onClick={() => setClickTitle(true)}>
 					{currentListTitle}
 				  </div>
 				  <input
@@ -95,12 +95,12 @@ const List = (props) => {
 					  handleChangeTitle();
 					}}
 					ref={(input) => input && input.focus()}
-					className={`your-title-input-class ${clickTitle ? 'show' : ''}`}
+					className={`title-input ${clickTitle ? 'show' : ''}`}
 					value={currentListTitle}
 					onChange={handleOnChangeTitle}
 				  />
 				  <div
-					className="your-clickable-icon-class"
+					className="clickable-icon"
 					color="#656565"
 					aria-controls="basic-menu"
 					aria-haspopup="true"
@@ -131,11 +131,11 @@ const List = (props) => {
 					<div
 					  {...provided.droppableProps}
 					  ref={provided.innerRef}
-					  className={`your-card-container-class ${
+					  className={`card-container ${
 						snapshot.isDraggingOver ? 'dragging-over' : ''
 					  }`}
 					>
-					  <div className="your-card-wrapper-class" dock={clickFooter}>
+					  <div className="card-wrapper" dock={clickFooter}>
 						{props.info.cards
 						  .filter((card) =>
 							props.searchString
@@ -153,9 +153,9 @@ const List = (props) => {
 						  ))}
 						{provided.placeholder}
 						{clickFooter && (
-						  <div ref={ref} className="your-add-title-card-container-class">
+						  <div ref={ref} className="add-title-card-container">
 							<input
-							  className="your-title-new-card-input-class"
+							  className="title-new-card-input"
 							  value={newCardTitle}
 							  autoFocus={true}
 							  placeholder="Enter a title for this card..."
@@ -174,7 +174,7 @@ const List = (props) => {
 				  )}
 				</Droppable>
 				{!clickFooter && (
-				  <div className="your-footer-button-class" onClick={() => setClickFooter(true)}>
+				  <div className="footer-button" onClick={() => setClickFooter(true)}>
 					<AddIcon fontSize="small" />
 					<span>Add a card</span>
 				  </div>

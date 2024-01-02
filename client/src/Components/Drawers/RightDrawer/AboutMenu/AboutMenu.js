@@ -16,7 +16,7 @@ import {
 } from './styled';
 import MemberIcon from '@mui/icons-material/PersonOutlineOutlined';
 import DescriptionIcon from '@mui/icons-material/TextSnippetOutlined';
-import BottomButtonGroup from '../../../Pages/BoardPage/BoardComponents/BottomButtonGroup/BottomButtonGroup';
+import BottomButtonGroup from '../../../Pages/Board/BottomButtonGroup';
 import { boardDescriptionUpdate } from '../../../../Services/boardService';
 import { Avatar } from '@mui/material';
 const AboutMenu = () => {

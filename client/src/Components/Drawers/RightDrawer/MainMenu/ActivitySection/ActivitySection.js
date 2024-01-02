@@ -17,7 +17,7 @@ import {
 } from './styled';
 import moment from 'moment';
 import { activityUpdate } from '../../../../../Services/boardService';
-import CardLoadingSvg from '../../../../../Images/cardLoading.svg';
+//import CardLoadingSvg from '../../../../../Images/cardLoading.svg';
 
 const ActivitySection = () => {
 	const board = useSelector((state) => state.board);
@@ -73,7 +73,7 @@ const ActivitySection = () => {
 			</HeadWrapper>
 			<Wrapper>
 				{board.activityLoading ? (
-					<LoadingBox image={CardLoadingSvg} />
+					<LoadingBox />
 				) : (
 					board.activity.map((act) => {
 						return act.actionType === 'action' ? (

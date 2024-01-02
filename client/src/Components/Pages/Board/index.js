@@ -1,27 +1,29 @@
 import Navbar from '../../Navbar';
 import React, { useEffect, useState } from 'react';
 import TopBar from './TopBar';
-// import AddList from './AddList';
-// import List from './List';
+import AddList from './AddList';
+import List from './List';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBoard } from '../../../Services/boardsService';
 import { getLists } from '../../../Services/boardService';
 import { updateCardOrder, updateListOrder } from '../../../Services/dragAndDropService';
 import Loading from '../../Loading';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import { useParams } from 'react-router-dom'
 import './index.scss';
 import './CommonStyled.scss';
 const Board = (props) => {
 	/* props.match.params.id */
+	const { id } = useParams();
 	const dispatch = useDispatch();
 	const { backgroundImageLink, isImage, loading, title } = useSelector((state) => state.board)|| {};
 	const { allLists, loadingListService } = useSelector((state) => state.list) || {};
 	const [searchString, setSearchString] = useState('');
-	const boardId = props.match?.params?.id || '';
+	const boardId = id;
 	useEffect(() => {
-		getBoard(props.match.params.id, dispatch);
+		getBoard(id, dispatch);
 		getLists(boardId, dispatch);
-	}, [props.match.params.id, dispatch, boardId]);
+	}, [id, dispatch, boardId]);
 
 	useEffect(() => {
 		document.title = title + ' | Task-Manager';
@@ -81,9 +83,9 @@ const Board = (props) => {
 							  boardId={boardId}
 							/>
 						  );
-						})}
+						})} */}
 					  {provided.placeholder}
-					  <AddList boardId={boardId} /> */}
+					  <AddList boardId={boardId} />
 					</div>
 				  );
 				}}

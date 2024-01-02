@@ -11,7 +11,7 @@
 }
 
 .add-list-button {
-  @extend .invite-button; // Assuming you want to extend the styles from InviteButton
+  //@extend .invite-button; // Assuming you want to extend the styles from InviteButton
   display: inline;
   width: 6rem;
   margin-left: -2px;
