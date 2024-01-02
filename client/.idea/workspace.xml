@@ -5,27 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20c9980f-a187-47bb-a150-43bd33d68926" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/CreateBoardModal/CardTittle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/CreateBoardModal/ChipComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/CreateBoardModal/CreateBoard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/CreateBoardModal/PhotoCardComponent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/CreateBoardModal/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Navbar/ProfileBox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Navbar/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Navbar/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/Slices/boardsSlice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/boardsService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BreakPoints.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Redux/Slices/listSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Images/cardLoading.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Images/search-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Images/trello-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Images/trello-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Images/trello-right.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Loading.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Loading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Date/DatePopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Date/DatePopover.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Boards/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Boards/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Boards/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Boards/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Login/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Login/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Register/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Register/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/Slices/userSlices.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Slices/userSlices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/userService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/CheckList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/checklist.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/Checklist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/Checklist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Comment/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Comment/Comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Description/Description.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Description/Description.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/EditCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/EditCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/AddAttachmentPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/AddAttachmentPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/EditAttachmentPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/EditAttachmentPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Checklist/ChecklistPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Checklist/ChecklistPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Cover/CoverPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Cover/CoverPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/LabelsPopover.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/LabelsPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/LabelsPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Board/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Board/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +62,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging feat/editCard",
-    "last_opened_file_path": "/Users/thanh/Documents/react_native/Nhom14-CongngheWeb/client",
+    "git-widget-placeholder": "feat/editCard",
+    "last_opened_file_path": "/Users/thanh/Documents/react_native/Nhom14-CongngheWeb/client/src/Components/Modals/EditCardModal/Checklist",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,13 +76,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist" />
+      <recent name="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/LabelsLabels" />
       <recent name="$PROJECT_DIR$/src/Redux/Slices" />
-      <recent name="$PROJECT_DIR$/src/Services" />
-      <recent name="$PROJECT_DIR$/src/Components/Modals" />
-      <recent name="$PROJECT_DIR$/src/Redux" />
-      <recent name="$PROJECT_DIR$/src/Components" />
+      <recent name="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels" />
+      <recent name="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Modals/EditCardModal" />
       <recent name="$PROJECT_DIR$/src/Redux" />
     </key>
   </component>

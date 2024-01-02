@@ -1,10 +1,31 @@
 import React, { useState } from 'react';
+import {
+	Container,
+	Row,
+	LeftColumn,
+	RightColumn,
+	Title,
+	Percentage,
+	CheckText,
+	RowRightButtonsWrapper,
+	IconWrapper,
+	TextAreaContainer,
+	TextArea,
+} from './styled';
 import CheckIcon from '@mui/icons-material/LibraryAddCheckOutlined';
+//import BottomButtonGroup from '../../../Pages/BoardPage/BoardComponents/BottomButtonGroup/BottomButtonGroup.js';
+import Checkbox from '../ReUsableComponents/Checkbox';
 import Button from '../ReUsableComponents/Button';
+import Progressbar from '../ReUsableComponents/Progressbar';
 import { useDispatch, useSelector } from 'react-redux';
-import { checklistDelete, checklistItemAdd, checklistItemCompletedSet, checklistItemDelete, checklistItemTextSet } from '../../../../Services/cardService';
+import {
+	checklistDelete,
+	checklistItemAdd,
+	checklistItemCompletedSet,
+	checklistItemDelete,
+	checklistItemTextSet,
+} from '../../../../Services/cardService';
 import DeleteIcon from '@mui/icons-material/DeleteForeverOutlined';
-import './Checklist.css';
 
 const Checklist = (props) => {
 	const dispatch = useDispatch();
@@ -62,100 +83,95 @@ const Checklist = (props) => {
 		};
 
 		return (
-			<div className="Row">
-				<div className="LeftColumn">
+			<Row showHover={true}>
+				<LeftColumn>
 					<Checkbox checked={checked} clickCallback={handleCompletedChange} />
-				</div>
-				<div className="RightColumn">
+				</LeftColumn>
+				<RightColumn>
 					{showEdit ? (
-						<div className="TextAreaContainer">
-       <textarea
-		   className="TextArea"
-		   value={editedText}
-		   onChange={(e) => setEditedText(e.target.value)}
-	   />
-							<BottomButtonGroup
-								title='Save'
-								clickCallback={handleTextChange}
-								closeCallback={() => {
-									setShowEdit(false);
-								}}
-							/>
-						</div>
+						<TextAreaContainer>
+							<TextArea value={editedText} onChange={(e) => setEditedText(e.target.value)} />
+							{/*<BottomButtonGroup*/}
+							{/*	title='Save'*/}
+							{/*	clickCallback={handleTextChange}*/}
+							{/*	closeCallback={() => {*/}
+							{/*		setShowEdit(false);*/}
+							{/*	}}*/}
+							{/*/>*/}
+						</TextAreaContainer>
 					) : (
 						<>
-							<div
-								className="CheckText"
+							<CheckText
 								onClick={() => {
 									setShowEdit(true);
 								}}
+								isChecked={checked}
 							>
 								{props.text}
-							</div>
-							<div className="IconWrapper" onClick={handleChecklistItemDeleteClick}>
+							</CheckText>
+							<IconWrapper onClick={handleChecklistItemDeleteClick}>
 								<DeleteIcon fontSize='1rem' />
-							</div>
+							</IconWrapper>
 						</>
 					)}
-				</div>
-			</div>
+				</RightColumn>
+			</Row>
 		);
 	};
 
 	return (
-		<div className="Container">
-			<div className="Row">
-				<div className="LeftColumn">
+		<Container>
+			<Row >
+				<LeftColumn>
 					<CheckIcon fontSize='small' />
-				</div>
-				<div className="RightColumn">
-					<h1 className="Title">{props.title}</h1>
-					<div className="RowRightButtonsWrapper">
+				</LeftColumn>
+				<RightColumn makeColumn={true}>
+					<Title>{props.title}</Title>
+					<RowRightButtonsWrapper>
 						<Button
 							clickCallback={() => setHideItems((prev) => !prev)}
 							title={hideItems ? 'Show checkeds' : 'Hide checkeds'}
 						/>
 						<Button clickCallback={() => handleChecklistDelete(props._id)} title='Delete' />
-					</div>
-				</div>
-			</div>
-			<div className="Row">
-				<div className="LeftColumn">
-					<div className="Percentage">{percentage()}%</div>
-				</div>
-				<div className="RightColumn">
+					</RowRightButtonsWrapper>
+				</RightColumn>
+			</Row>
+			<Row>
+				<LeftColumn>
+					<Percentage>{percentage()}%</Percentage>
+				</LeftColumn>
+				<RightColumn>
 					<Progressbar value={percentage()} />
-				</div>
-			</div>
+				</RightColumn>
+			</Row>
 
 			{props.items.map((item) => {
 				if (hideItems && item.completed) return undefined;
 				return <ChecklistItem key={item._id} checklistId={props._id} {...item} />;
 			})}
 
-			<div className="Row">
-				<div className="LeftColumn"></div>
-				<div className="RightColumn">
+			<Row>
+				<LeftColumn></LeftColumn>
+				<RightColumn>
 					{showAddItem ? (
-						<div className="TextAreaContainer">
-       <textarea
-		   className="TextArea"
-		   value={newItem}
-		   onChange={(e) => setNewItem(e.target.value)}
-		   placeholder='Add an item'
-	   />
-							<BottomButtonGroup
-								title='Add'
-								clickCallback={() => handleAddChecklistItem(props._id)}
-								closeCallback={() => setShowAddItem(false)}
+						<TextAreaContainer>
+							<TextArea
+								value={newItem}
+								onChange={(e) => setNewItem(e.target.value)}
+								placeholder='Add an item'
 							/>
-						</div>
+							{/*<BottomButtonGroup*/}
+							{/*	title='Add'*/}
+							{/*	clickCallback={() => handleAddChecklistItem(props._id)}*/}
+							{/*	closeCallback={() => setShowAddItem(false)}*/}
+							{/*/>*/}
+						</TextAreaContainer>
 					) : (
 						<Button clickCallback={() => setShowAddItem(true)} title='Add an item' />
 					)}
-				</div>
-			</div>
-		</div>
+				</RightColumn>
+			</Row>
+		</Container>
 	);
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { Container, SmallColorBox, SmallColorsContainer, Title } from '../Labels/LabelsPopover.css';
+import { Container, SmallColorBox, SmallColorsContainer, Title } from '../Labels/styled';
 import SizeTypeOne from './SizeTypeOne';
 import SizeTypeTwo from './SizeTypeTwo';
 import Button from '../../ReUsableComponents/Button';

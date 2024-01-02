@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import DescriptionIcon from '@mui/icons-material/TextSnippetOutlined';
-import BottomButtonGroup from '../../../Pages/BoardPage/BoardComponents/BottomButtonGroup/BottomButtonGroup.js';
+//import BottomButtonGroup from '../../../Pages/BoardPage/BoardComponents/BottomButtonGroup/BottomButtonGroup.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { descriptionUpdate } from '../../../../Services/cardService';
 import './Description.css';
@@ -59,14 +59,14 @@ const Description = () => {
 					/>
 				)}
 				<div style={{ display: inputFocus ? 'block' : 'none' }}>
-					<BottomButtonGroup
-						closeCallback={() => {
-							setInputFocus(false);
-							setDescription(thisCard.description);
-						}}
-						clickCallback={handleSaveClick}
-						title='Save'
-					/>
+					{/*<BottomButtonGroup*/}
+					{/*	closeCallback={() => {*/}
+					{/*		setInputFocus(false);*/}
+					{/*		setDescription(thisCard.description);*/}
+					{/*	}}*/}
+					{/*	clickCallback={handleSaveClick}*/}
+					{/*	title='Save'*/}
+					{/*/>*/}
 				</div>
 			</div>
 		</div>

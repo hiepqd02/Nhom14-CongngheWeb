@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './editCard.css';
+import './editcard.css';
 import Modal from '@mui/material/Modal';
 import Actions from './Actions/Actions';
 import Activity from './Activity/Activity';
@@ -9,7 +9,7 @@ import Description from './Description/Description';
 import Attachments from './Attachments/Attachments';
 import Features from './Features/Features';
 import Title from './Title/Title';
-import CardLoadingSvg from '../../../Images/cardLoading.svg';
+import CardLoadingSvg from '../../../assets/Images/cardLoading.svg';
 import { getCard } from '../../../Services/cardService';
 import { useSelector, useDispatch } from 'react-redux';
 import IconButton from './ReUsableComponents/IconButton';
@@ -17,7 +17,7 @@ import CoverIcon from '@mui/icons-material/TableChartOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 
 export default function EditCard(props) {
-	const { cardId, listId, boardId } = props.ids;
+	const { cardId, listId, boardId } = props;
 	const dispatch = useDispatch();
 	const thisCard = useSelector((state) => state.card);
 	React.useEffect(() => {

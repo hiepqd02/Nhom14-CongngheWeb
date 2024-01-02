@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SearchArea, Title } from '../Labels/LabelsPopover.css';
+import { SearchArea, Title } from '../Labels/styled';
 import Button from '../../ReUsableComponents/Button';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
