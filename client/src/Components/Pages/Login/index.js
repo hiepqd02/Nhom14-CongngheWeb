@@ -16,7 +16,6 @@ const Login = () => {
     document.title = "Log in to Boostme"
   }, [])
   const handleSubmit = () => {
-    console.log(userInformations);
     login(userInformations, dispatch);
   };
   return (
