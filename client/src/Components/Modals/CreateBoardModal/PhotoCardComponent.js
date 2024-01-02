@@ -1,18 +1,16 @@
-import React from "react";
-import * as style from "./Styled";
 import DoneRoundedIcon from "@mui/icons-material/DoneRounded";
 
 const PhotoCardComponent = (props) => {
-  const { link, selectedLink, callback } = props;
-  return (
-    <style.PhotoWrapper link={link} onClick={() => callback(link)}>
-      <style.Photo show={selectedLink === link}>
-        <style.DoneIconWrapper show={selectedLink === link}>
-          <DoneRoundedIcon fontSize="0.1rem" />
-        </style.DoneIconWrapper>
-      </style.Photo>
-    </style.PhotoWrapper>
-  );
+    const { link, selectedLink, callback } = props;
+    return (
+        <div className="photo-wrapper" style={{ backgroundImage: `url(${link})` }} onClick={() => callback(link)}>
+            <div className="photo" style={{ backgroundColor: link === selectedLink ? "rgba(0,0,0,0.8)" : "rgba(255,255,255,0.0)" }}>
+                <div className="selected-icon" style={{ display: link === selectedLink ? 'flex' : 'none' }}>
+                    <DoneRoundedIcon fontSize="3px" />
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default PhotoCardComponent;
