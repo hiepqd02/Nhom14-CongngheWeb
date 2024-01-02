@@ -1,0 +1,79 @@
+    .Container {
+        height: fit-content;
+        width:14rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .DateRangeWrapper {
+        display:flex;
+        width:100%;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .Wrapper {
+        display:flex;
+        flex-direction:column;
+        gap:0.5rem;
+    }
+
+    .Row {
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        margin-top: -0.4rem;
+    }
+
+    .DateInput {
+        height: 1.85rem;
+        width: 40%;
+        border: 2px solid lightgray;
+        outline: none;
+        border-radius: 3px;
+        font-size: 0.875rem;
+        padding: 0.3rem 0rem 0.3rem 0.3rem;
+        cursor: text;
+        background-color: #fafbfc;
+    }
+
+    .DateInput:focus {
+        border: 2px solid #0079bf;
+        background-color: #fff;
+    }
+
+    .DateInput:read-only {
+        cursor: not-allowed;
+        background-color: #EBECF0;
+        border-color: #EBECF0;
+        color: #b4bac5;
+    }
+
+    .DateTitle {
+        color: #5e6c84;
+    }
+
+    .DateTitle:focus {
+        color: #0079BF;
+    }
+
+    .SaveButton {
+        margin-top: 1rem;
+        background-color: #0079b0;
+        color: #fff;
+        border-radius: 3px;
+        border:none;
+        cursor: pointer;
+        padding: 0.375rem;
+    }
+
+    .SaveButton:hover {
+        background-color: #026aa7;
+    }
+
+    .SaveButton:active {
+        background-color: #055a8c;
+    }

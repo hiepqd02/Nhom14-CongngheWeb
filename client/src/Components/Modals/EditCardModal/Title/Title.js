@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Container, IconWrapper, RightContainer, TitleInput, Description, Link } from './styled';
 import TitleIcon from '@mui/icons-material/ChromeReaderMode';
 import { titleUpdate } from '../../../../Services/cardService';
 import { useDispatch, useSelector } from 'react-redux';
+import './Title.css';
 
 const Title = () => {
 	const dispatch = useDispatch();
@@ -18,21 +18,22 @@ const Title = () => {
 	};
 
 	return (
-		<Container>
-			<IconWrapper>
+		<div className="Container">
+			<div className="IconWrapper">
 				<TitleIcon fontSize='small' />
-			</IconWrapper>
-			<RightContainer>
-				<TitleInput
+			</div>
+			<div className="RightContainer">
+				<input
+					className="TitleInput"
 					value={title}
 					onChange={(e) => setTitle(e.target.value)}
 					onBlur={handleTitleAccept}
-				></TitleInput>
-				<Description>
-					in list <Link>{card.listTitle}</Link>
-				</Description>
-			</RightContainer>
-		</Container>
+				></input>
+				<div className="Description">
+					in list <a className="Link">{card.listTitle}</a>
+				</div>
+			</div>
+		</div>
 	);
 };
 

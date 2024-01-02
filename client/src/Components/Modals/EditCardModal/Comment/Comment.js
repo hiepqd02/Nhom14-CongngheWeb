@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import BottomButtonGroup from '../../../Pages/BoardPage/BoardComponents/BottomButtonGroup/BottomButtonGroup.js';
-import {
-	Container,
-	LeftContainer,
-	RightContainer,
-	Title,
-	CommentWrapper,
-	ButtonContainer,
-	CommentArea,
-	LinkContainer,
-	Link,
-} from './styled';
 import { commentDelete, commentUpdate } from '../../../../Services/cardService.js';
 import { Avatar } from '@mui/material';
+import './Comment.css';
 
 const Comment = (props) => {
 	const [edit, setEdit] = useState(true);
@@ -31,19 +21,19 @@ const Comment = (props) => {
 	};
 	return (
 		<>
-			<Container>
-				<LeftContainer>
+			<div className="Container">
+				<div className="LeftContainer">
 					<Avatar
 						sx={{ width: 28, height: 28, bgcolor: props.color, fontSize: '0.875rem', fontWeight: '800' }}
 					>
 						{props.userName[0].toUpperCase()}
 					</Avatar>
-				</LeftContainer>
-				<RightContainer>
-					<Title>{props.userName}</Title>
-					<CommentWrapper>
-						<CommentArea value={comment} onChange={(e) => setComment(e.target.value)} readOnly={edit} />
-						<ButtonContainer show={!edit}>
+				</div>
+				<div className="RightContainer">
+					<div className="Title">{props.userName}</div>
+					<div className="CommentWrapper">
+						<textarea className={`CommentArea ${edit ? 'read-only' : ''}`} value={comment} onChange={(e) => setComment(e.target.value)} readOnly={edit} />
+						<div className={`ButtonContainer ${!edit ? 'show' : ''}`}>
 							<BottomButtonGroup
 								title='Save'
 								clickCallback={handleSaveClick}
@@ -51,14 +41,14 @@ const Comment = (props) => {
 									setEdit(true);
 								}}
 							/>
-						</ButtonContainer>
-						<LinkContainer show={edit && user.name === props.userName}>
-							<Link onClick={() => setEdit(false)}>Edit</Link>
-							<Link onClick={handleDeleteClick}>Delete</Link>
-						</LinkContainer>
-					</CommentWrapper>
-				</RightContainer>
-			</Container>
+						</div>
+						<div className={`LinkContainer ${edit && user.name === props.userName ? 'show' : ''}`}>
+							<div className="Link" onClick={() => setEdit(false)}>Edit</div>
+							<div className="Link" onClick={handleDeleteClick}>Delete</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</>
 	);
 };

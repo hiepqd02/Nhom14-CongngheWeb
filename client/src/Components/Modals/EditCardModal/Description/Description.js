@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Container, RightContainer, Title, DescriptionInput, DescriptionText } from './styled';
 import DescriptionIcon from '@mui/icons-material/TextSnippetOutlined';
 import BottomButtonGroup from '../../../Pages/BoardPage/BoardComponents/BottomButtonGroup/BottomButtonGroup.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { descriptionUpdate } from '../../../../Services/cardService';
+import './Description.css';
+
 const Description = () => {
 	const thisCard = useSelector((state) => state.card);
 	const dispatch = useDispatch();
@@ -44,17 +45,15 @@ const Description = () => {
 	});
 
 	return (
-		<Container ref={ref2}>
+		<div className="Container">
 			<DescriptionIcon fontSize='small' />
-			<RightContainer>
-				<Title>Description</Title>
+			<div className="RightContainer">
+				<h3 className="Title">Description</h3>
 				{description && !inputFocus ? (
-					<DescriptionText onClick={() => setInputFocus(true)}>{description}</DescriptionText>
+					<p className="DescriptionText" onClick={() => setInputFocus(true)}>{description}</p>
 				) : (
-					<DescriptionInput
-						ref={ref}
-						minHeight={inputFocus ? '5.5rem' : '2.5rem'}
-						placeholder='Add a more detailed description...'
+					<textarea
+						className={`DescriptionInput ${inputFocus ? 'focus' : ''}`}
 						value={description}
 						onChange={(e) => setDescription(e.target.value)}
 					/>
@@ -69,8 +68,8 @@ const Description = () => {
 						title='Save'
 					/>
 				</div>
-			</RightContainer>
-		</Container>
+			</div>
+		</div>
 	);
 };
 

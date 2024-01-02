@@ -3,25 +3,12 @@ import NorthEastRoundedIcon from '@mui/icons-material/NorthEastRounded';
 import AttachmentIcon from '@mui/icons-material/InsertLinkRounded';
 import Button from '../ReUsableComponents/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-	Container,
-	RightWrapper,
-	Title,
-	Row,
-	FaviconWrapper,
-	AttachmentRightWrapper,
-	AttachmentTitleWrapper,
-	AttachmentTitle,
-	AttachmentTitleIconWrapper,
-	AttachmentFooterWrapper,
-	AttachmentDate,
-	AttachmentOperations,
-} from './styled';
 import { attachmentDelete } from '../../../../Services/cardService';
 import BasePopover from '../ReUsableComponents/BasePopover';
 import EditAttachmentPopover from '../Popovers/Attachment/EditAttachmentPopover';
 import moment from 'moment';
 import AddAttachmentPopover from '../Popovers/Attachment/AddAttachmentPopover';
+import './Attachments.css';
 
 const Attachments = (props) => {
 	const card = useSelector((state) => state.card);
@@ -31,44 +18,46 @@ const Attachments = (props) => {
 	const [attachmentPopover, setAttachmentPopover] = useState(null);
 
 	const handleDeleteClick = async (attachmentId) => {
-		await attachmentDelete(card.cardId, card.listId, card.boardId, attachmentId, dispatch);		
+		await attachmentDelete(card.cardId, card.listId, card.boardId, attachmentId, dispatch);
 	};
 	return (
 		<>
-			<Container>
+			<div className="Container">
 				<AttachmentIcon fontSize='small' />
-				<RightWrapper>
-					<Title>Attachments</Title>
+				<div className="RightWrapper">
+					<h1 className="Title">Attachments</h1>
 					{card.attachments.map((attachment) => {
 						const validateLink = () => {};
 						validateLink();
 						return (
-							<Row key={attachment._id} onClick={() => window.open(attachment.link, '_blank')}>
-								<FaviconWrapper>
+							<div className="Row" key={attachment._id} onClick={() => window.open(attachment.link, '_blank')}>
+								<a className="FaviconWrapper">
 									<AttachmentIcon fontSize='large' />
-								</FaviconWrapper>
-								<AttachmentRightWrapper>
-									<AttachmentTitleWrapper>
-										<AttachmentTitle>
+								</a>
+								<div className="AttachmentRightWrapper">
+									<div className="AttachmentTitleWrapper">
+										<h3 className="AttachmentTitle">
 											{attachment.name ? attachment.name : attachment.link}
-										</AttachmentTitle>
-										<AttachmentTitleIconWrapper>
+										</h3>
+										<div className="AttachmentTitleIconWrapper">
 											<NorthEastRoundedIcon fontSize='inherit' />
-										</AttachmentTitleIconWrapper>
-									</AttachmentTitleWrapper>
-									<AttachmentFooterWrapper>
-										<AttachmentDate>
+										</div>
+									</div>
+									<div className="AttachmentFooterWrapper">
+										<div className="AttachmentDate">
 											{'Added ' + moment(attachment.date).format('MMM, DD [at] HH.mm')}
-											<AttachmentOperations
+											<p
+												className="AttachmentOperations"
 												onClick={(e) => {
 													e.stopPropagation();
 													handleDeleteClick(attachment._id);
 												}}
 											>
 												Delete
-											</AttachmentOperations>
+											</p>
 											{' - '}
-											<AttachmentOperations
+											<p
+												className="AttachmentOperations"
 												onClick={(e) => {
 													e.stopPropagation();
 													setPopoverComponent(attachment);
@@ -76,11 +65,11 @@ const Attachments = (props) => {
 												}}
 											>
 												Edit
-											</AttachmentOperations>
-										</AttachmentDate>
-									</AttachmentFooterWrapper>
-								</AttachmentRightWrapper>
-							</Row>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						);
 					})}
 					<Button
@@ -88,7 +77,7 @@ const Attachments = (props) => {
 						clickCallback={(event) => setAttachmentPopover(event.currentTarget)}
 						title='Add an Attachment'
 					/>
-				</RightWrapper>
+				</div>
 				{editPopover && (
 					<BasePopover
 						anchorElement={editPopover}
@@ -122,7 +111,7 @@ const Attachments = (props) => {
 						}
 					/>
 				)}
-			</Container>
+			</div>
 		</>
 	);
 };

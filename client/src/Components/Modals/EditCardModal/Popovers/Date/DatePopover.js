@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, DateRangeWrapper, Wrapper, Row, DateInput, DateTitle, SaveButton } from './styled';
+import { Container, DateRangeWrapper, Wrapper, Row, DateInput, DateTitle, SaveButton } from './DatePopover.css';
 import { DateRange } from 'react-date-range';
 import CheckBox from '../../ReUsableComponents/Checkbox';
 import Button from '../../ReUsableComponents/Button';
@@ -7,7 +7,8 @@ import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { openAlert } from '../../../../../Redux/Slices/alertSlice';
 import { startDueDatesUpdate } from '../../../../../Services/cardService';
-
+import './DatePopover.css'
+import './DateRange.css'
 const DatePopover = (props) => {
 	const dispatch = useDispatch();
 	const card = useSelector((state) => state.card);
@@ -17,14 +18,14 @@ const DatePopover = (props) => {
 				card.date.startDate !== null
 					? moment(card.date.startDate).toDate()
 					: card.date.dueDate !== null
-					? moment(card.date.dueDate).toDate()
-					: new Date(),
+						? moment(card.date.dueDate).toDate()
+						: new Date(),
 			endDate:
 				card.date.dueDate !== null
 					? moment(card.date.dueDate).toDate()
 					: card.date.startDate !== null
-					? moment(card.date.startDate).toDate()
-					: new Date(),
+						? moment(card.date.startDate).toDate()
+						: new Date(),
 			key: 'selection',
 		},
 	]);
@@ -53,7 +54,7 @@ const DatePopover = (props) => {
 		if (date1 > date2) {
 			dispatch(
 				openAlert({
-					message: 'Due date cannot be smaller then start date!',
+					message: 'Due date cannot be smaller than the start date!',
 					severity: 'error',
 				})
 			);
@@ -89,38 +90,40 @@ const DatePopover = (props) => {
 	};
 
 	return (
-		<Container>
-			<DateRangeWrapper>
+		<div className="Container">
+			<div className="DateRangeWrapper">
 				<DateRange
 					editableDateInputs={false}
 					onChange={(item) => {
 						enableStartDate && enableDueDate
 							? setState([item.selection])
 							: state[0].startDate !== item.selection.startDate
-							? setState([
+								? setState([
 									{
 										startDate: item.selection.startDate,
 										endDate: item.selection.startDate,
 										key: 'selection',
 									},
-							  ])
-							: setState([
+								])
+								: setState([
 									{
 										startDate: item.selection.endDate,
 										endDate: item.selection.endDate,
 										key: 'selection',
 									},
-							  ]);
+								]);
 					}}
 					format={'DD/MM/yyyy'}
 					showPreview={enableStartDate && enableDueDate ? true : false}
 					moveRangeOnFirstSelection={false}
 					ranges={state}
 				/>
-			</DateRangeWrapper>
-			<Wrapper>
-				<DateTitle focus={focusStart}>Start Date</DateTitle>
-				<Row>
+			</div>
+			<div className="Wrapper">
+				<div className="DateTitle" focus={focusStart}>
+					Start Date
+				</div>
+				<div className="Row">
 					<CheckBox
 						checked={enableStartDate}
 						clickCallback={() =>
@@ -140,11 +143,12 @@ const DatePopover = (props) => {
 							})
 						}
 					/>
-					<DateInput
+					<input
 						onClick={() => {
 							setFocusStart(true);
 							setFocusDue(false);
 						}}
+						className="DateInput"
 						focus={focusStart}
 						readOnly={!enableStartDate}
 						value={enableStartDate ? startDate : ''}
@@ -159,9 +163,11 @@ const DatePopover = (props) => {
 						type={enableStartDate ? 'date' : 'text'}
 						placeholder='dd.mm.yyyy'
 					/>
-				</Row>
-				<DateTitle focus={focusDue}>Due Date</DateTitle>
-				<Row>
+				</div>
+				<div className="DateTitle" focus={focusDue}>
+					Due Date
+				</div>
+				<div className="Row">
 					<CheckBox
 						checked={enableDueDate}
 						clickCallback={() =>
@@ -181,11 +187,12 @@ const DatePopover = (props) => {
 							})
 						}
 					/>
-					<DateInput
+					<input
 						onClick={() => {
 							setFocusStart(false);
 							setFocusDue(true);
 						}}
+						className="DateInput"
 						focus={focusDue}
 						readOnly={!enableDueDate}
 						value={enableDueDate ? dueDate : ''}
@@ -200,11 +207,12 @@ const DatePopover = (props) => {
 						type={enableDueDate ? 'date' : 'text'}
 						placeholder='dd.mm.yyyy'
 					/>
-					<DateInput
+					<input
 						onClick={() => {
 							setFocusStart(false);
 							setFocusDue(true);
 						}}
+						className="DateInput"
 						focus={focusDue}
 						onFocus={() => {
 							setFocusStart(false);
@@ -217,11 +225,13 @@ const DatePopover = (props) => {
 						type={enableDueDate ? 'time' : 'text'}
 						placeholder='hh:mm'
 					/>
-				</Row>
-				<SaveButton onClick={handleSaveClick}>Save</SaveButton>
+				</div>
+				<button className="SaveButton" onClick={handleSaveClick}>
+					Save
+				</button>
 				<Button clickCallback={handleRemoveClick} title='Remove' />
-			</Wrapper>
-		</Container>
+			</div>
+		</div>
 	);
 };
 

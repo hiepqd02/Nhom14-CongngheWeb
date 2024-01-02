@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Title, SearchArea, ButtonContainer, BlueButton } from '../Labels/styled';
+import { Container, Title, SearchArea, ButtonContainer, BlueButton } from '../Labels/LabelsPopover.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { checklistCreate } from '../../../../../Services/cardService';
 const ChecklistPopover = (props) => {

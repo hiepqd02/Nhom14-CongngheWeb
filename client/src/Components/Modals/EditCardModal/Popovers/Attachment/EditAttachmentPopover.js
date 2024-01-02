@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SearchArea, Title, BlueButton } from '../Labels/styled';
+import { SearchArea, Title, BlueButton } from '../Labels/LabelsPopover.css';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { attachmentUpdate } from '../../../../../Services/cardService';

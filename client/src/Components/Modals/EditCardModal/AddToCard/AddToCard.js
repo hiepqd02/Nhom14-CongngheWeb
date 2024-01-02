@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container, Title } from './styled';
 import Button from '../ReUsableComponents/IconButton';
 import MemberIcon from '@mui/icons-material/PersonOutlineOutlined';
 import LabelIcon from '@mui/icons-material/LabelOutlined';
@@ -14,6 +13,7 @@ import ChecklistPopover from '../Popovers/Checklist/ChecklistPopover';
 import DatePopover from '../Popovers/Date/DatePopover';
 import AddAttachmentPopover from '../Popovers/Attachment/AddAttachmentPopover';
 import CoverPopover from '../Popovers/Cover/CoverPopover';
+import './AddToCard.css';
 
 const AddToCard = () => {
 	const [memberPopover, setMemberPopover] = React.useState(null);
@@ -25,8 +25,8 @@ const AddToCard = () => {
 	const [labelsBackArrow, setLabelsBackArrow] = React.useState(false);
 	const [labelsTitle, setLabelsTitle] = React.useState('Labels');
 	return (
-		<Container>
-			<Title>Add to card</Title>
+		<div className="Container">
+			<div className="Title">Add to card</div>
 
 			<Button
 				clickCallback={(event) => setMemberPopover(event.currentTarget)}
@@ -142,8 +142,8 @@ const AddToCard = () => {
 					}}/>}
 				/>
 			)}
-			
-		</Container>
+
+		</div>
 	);
 };
 

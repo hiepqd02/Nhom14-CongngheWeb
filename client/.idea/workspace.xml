@@ -5,55 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20c9980f-a187-47bb-a150-43bd33d68926" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Actions/Actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Actions/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Activity/Activity.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Activity/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/ActivityLog/ActivityLog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/ActivityLog/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/AddToCard/AddToCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/AddToCard/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Attachments/Attachments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Attachments/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/Checklist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Comment/Comment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Comment/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/CommonStyles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Description/Description.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Description/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/EditCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Features/Features.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Features/MembersFeature.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Features/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/AddAttachmentPopover.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/EditAttachmentPopover.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Checklist/ChecklistPopover.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Cover/CoverPopover.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Cover/SizeTypeOne.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Cover/SizeTypeTwo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Date/DatePopover.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Date/DateRange.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Date/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/InviteMembers/InviteMembers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/InviteMembers/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/LabelsPopover.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Members/MembersPopover.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/ReUsableComponents/BasePopover.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/ReUsableComponents/Button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/ReUsableComponents/Checkbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/ReUsableComponents/IconButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/ReUsableComponents/Progressbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Title/Title.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Title/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Redux/Slices/cardSlice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/cardService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/listService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Actions/Actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Actions/Actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Actions/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Actions/actions.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Activity/Activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Activity/Activity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Activity/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Activity/Activity.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/ActivityLog/ActivityLog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/ActivityLog/ActivityLog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/ActivityLog/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/ActivityLog/ActivityLog.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/AddToCard/AddToCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/AddToCard/AddToCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/AddToCard/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/AddToCard/AddToCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Attachments/Attachments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Attachments/Attachments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Attachments/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Attachments/Attachments.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/Checklist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/Checklist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/CheckList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Comment/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Comment/Comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Comment/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Comment/Comment.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Description/Description.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Description/Description.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Description/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Description/Description.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/EditCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/EditCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/AddAttachmentPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/AddAttachmentPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/EditAttachmentPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/EditAttachmentPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Checklist/ChecklistPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Checklist/ChecklistPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Cover/CoverPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Cover/CoverPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Date/DatePopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Date/DatePopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Date/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Date/DatePopover.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/InviteMembers/InviteMembers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/InviteMembers/InviteMembers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/InviteMembers/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/InviteMembers/InviteMember.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/LabelsPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/LabelsPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/LabelsPopover.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Title/Title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Title/Title.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Title/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Title/Title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/editcard.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,23 +64,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feat/editCard",
-    "last_opened_file_path": "/Users/thanh/Documents/react_native/Nhom14-CongngheWeb/client/src/Redux/Slices",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feat/editCard&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/thanh/Documents/react_native/Nhom14-CongngheWeb/client/src/Redux/Slices&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Redux/Slices" />
@@ -140,7 +122,9 @@
       <workItem from="1703910471715" duration="1562000" />
       <workItem from="1703912074281" duration="4027000" />
       <workItem from="1704035004078" duration="169000" />
-      <workItem from="1704035869839" duration="814000" />
+      <workItem from="1704035869839" duration="1195000" />
+      <workItem from="1704082348834" duration="443000" />
+      <workItem from="1704165934985" duration="3520000" />
     </task>
     <servers />
   </component>
