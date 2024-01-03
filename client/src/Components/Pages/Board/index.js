@@ -16,7 +16,8 @@ const Board = (props) => {
 	/* props.match.params.id */
 	const { id } = useParams();
 	const dispatch = useDispatch();
-	const { backgroundImageLink, isImage, loading, title } = useSelector((state) => state.board)|| {};
+	//Todo: fix the useSelector
+	const { backgroundImageLink, isImage, loading, title } = useSelector((state) => state.board);
 	const { allLists, loadingListService } = useSelector((state) => state.list) || {};
 	const [searchString, setSearchString] = useState('');
 	const boardId = id;
@@ -26,7 +27,7 @@ const Board = (props) => {
 	}, [id, dispatch, boardId]);
 
 	useEffect(() => {
-		document.title = title + ' | Task-Manager';
+		document.title = title + ' | Boostme';
 	}, [title]);
 
 	const onDragEnd = async (result) => {
@@ -72,7 +73,7 @@ const Board = (props) => {
 				{(provided, snapshot) => {
 				  return (
 					<div className="ListContainer" {...provided.droppableProps} ref={provided.innerRef}>
-					  {/* {!loading &&
+					  {!loading &&
 						allLists.map((list, index) => {
 						  return (
 							<List
@@ -83,7 +84,7 @@ const Board = (props) => {
 							  boardId={boardId}
 							/>
 						  );
-						})} */}
+						})}
 					  {provided.placeholder}
 					  <AddList boardId={boardId} />
 					</div>
