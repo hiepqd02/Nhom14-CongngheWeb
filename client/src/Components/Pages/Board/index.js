@@ -11,17 +11,19 @@ import Loading from '../../Loading';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import './index.scss';
 import './CommonStyled.scss';
+import { useParams } from 'react-router-dom'
 const Board = (props) => {
-	/* props.match.params.id */
+	const { id } = useParams()
 	const dispatch = useDispatch();
-	const { backgroundImageLink, isImage, loading, title } = useSelector((state) => state.board)|| {};
+	const { backgroundImageLink, isImage, loading, title } = useSelector((state) => state.board) || {};
 	const { allLists, loadingListService } = useSelector((state) => state.list) || {};
 	const [searchString, setSearchString] = useState('');
-	const boardId = props.match?.params?.id || '';
+	// const boardId = props.match.params.id || '';
+	const boardId = id
 	useEffect(() => {
-		getBoard(props.match.params.id, dispatch);
+		getBoard(boardId, dispatch);
 		getLists(boardId, dispatch);
-	}, [props.match.params.id, dispatch, boardId]);
+	}, [id, dispatch, boardId]);
 
 	useEffect(() => {
 		document.title = title + ' | Task-Manager';
@@ -61,16 +63,16 @@ const Board = (props) => {
 
 	return (
 		<>
-		  <Navbar searchString={searchString} setSearchString={setSearchString} />
-		  <div className={`Container ${isImage ? 'image-container' : 'color-container'}`}>
-			<TopBar />
-			{(loading || loadingListService) && <Loading />}
-			<DragDropContext onDragEnd={onDragEnd}>
-			  <Droppable droppableId='all-columns' direction='horizontal' type='column'>
-				{(provided, snapshot) => {
-				  return (
-					<div className="ListContainer" {...provided.droppableProps} ref={provided.innerRef}>
-					  {/* {!loading &&
+			<Navbar searchString={searchString} setSearchString={setSearchString} />
+			<div className={`Container ${isImage ? 'image-container' : 'color-container'}`}>
+				<TopBar />
+				{(loading || loadingListService) && <Loading />}
+				<DragDropContext onDragEnd={onDragEnd}>
+					<Droppable droppableId='all-columns' direction='horizontal' type='column'>
+						{(provided, snapshot) => {
+							return (
+								<div className="ListContainer" {...provided.droppableProps} ref={provided.innerRef}>
+									{/* {!loading &&
 						allLists.map((list, index) => {
 						  return (
 							<List
@@ -84,15 +86,15 @@ const Board = (props) => {
 						})}
 					  {provided.placeholder}
 					  <AddList boardId={boardId} /> */}
-					</div>
-				  );
-				}}
-			  </Droppable>
-			</DragDropContext>
-		  </div>
+								</div>
+							);
+						}}
+					</Droppable>
+				</DragDropContext>
+			</div>
 		</>
-	  );
-	  
+	);
+
 };
 
 export default Board;
