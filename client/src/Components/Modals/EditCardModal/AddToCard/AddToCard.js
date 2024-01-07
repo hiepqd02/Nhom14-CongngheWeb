@@ -98,7 +98,7 @@ const AddToCard = () => {
 				title='Dates'
 				icon={<DateIcon fontSize='small' />}
 			></Button> */}
-			{datePopover && (
+			{/* {datePopover && (
 				<BasePopover
 					anchorElement={datePopover}
 					closeCallback={() => {
@@ -109,7 +109,7 @@ const AddToCard = () => {
 						setDatePopover(null);
 					}} />}
 				/>
-			)}
+			)} */}
 
 			<Button
 				clickCallback={(event) => setAttachmentPopover(event.currentTarget)}
@@ -129,8 +129,8 @@ const AddToCard = () => {
 				/>
 			)}
 
-			<Button title='Cover' clickCallback={(event) => setCoverPopover(event.currentTarget)} icon={<CoverIcon fontSize='small' />}></Button>
-			{coverPopover && (
+			{/* <Button title='Cover' clickCallback={(event) => setCoverPopover(event.currentTarget)} icon={<CoverIcon fontSize='small' />}></Button> */}
+			{/* {coverPopover && (
 				<BasePopover
 					anchorElement={coverPopover}
 					closeCallback={() => {
@@ -141,7 +141,7 @@ const AddToCard = () => {
 						setCoverPopover(null);
 					}} />}
 				/>
-			)}
+			)} */}
 
 		</div>
 	);

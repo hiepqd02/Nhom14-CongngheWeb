@@ -20,7 +20,6 @@ export default function EditCard(props) {
 	const { cardId, listId, boardId } = props.ids;
 	const dispatch = useDispatch();
 	const thisCard = useSelector((state) => state.card);
-	console.log("props", props);
 	React.useEffect(() => {
 		if (props.open) {
 			getCard(cardId, listId, boardId, dispatch);
@@ -31,11 +30,11 @@ export default function EditCard(props) {
 		<div style={{ position: 'relative' }}>
 			<Modal open={props.open} onClose={props.callback} style={{ overflow: 'auto' }}>
 				<div className="edit-card-container">
-					<div className="CoverContainer" style={{ backgroundColor: !thisCard.pending ? thisCard.cover.color : null }}>
+					{/* <div className="CoverContainer" style={{ backgroundColor: !thisCard.pending ? thisCard.cover.color : null }}>
 						<div className="CoverButtonWrapper">
 							<IconButton title='Cover' icon={<CoverIcon fontSize='small' />} />
 						</div>
-					</div>
+					</div> */}
 					<div className="TitleContainer">{!thisCard.pending && <Title />}</div>
 					<div className="edit-card-wrapper">
 						<div className="MainContainer">

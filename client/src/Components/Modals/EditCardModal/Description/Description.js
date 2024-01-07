@@ -33,8 +33,6 @@ const Description = () => {
 		if (ref2.current && !ref2.current.contains(event.target)) {
 			setInputFocus(false);
 			setDescription(thisCard.description);
-		} else {
-			setInputFocus(true);
 		}
 	};
 

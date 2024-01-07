@@ -21,7 +21,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="left-content">
-        <div className="header">
+        <div className="header-login">
           <div className="logo"></div>
           <div className="name">Boostme</div>
         </div>

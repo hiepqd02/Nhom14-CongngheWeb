@@ -47,21 +47,20 @@ const Card = (props) => {
 			<Draggable draggableId={props.info._id} index={props.index}>
 				{(provided, snapshot) => {
 					return (
-						<div className='container'
+						<div className='card-container'
 							onClick={handleOpenClose}
 							{...provided.dragHandleProps}
 							{...provided.draggableProps}
-							style={getStyle(provided.draggableProps.style, snapshot)}
 							ref={provided.innerRef}
 							isDragging={snapshot.isDragging}
-							color={!card.cover.isSizeOne ? card.cover.color : '#fff'}
+							style={{ backgroundColor: card.cover.isSizeOne ? "#fff" : card.cover.color }}
 							padding={card.cover.color && card.cover.isSizeOne}
 						>
-							{card.cover.isSizeOne && <div className='cover' color={card.cover.color} />}
+							{card.cover.isSizeOne && <div className='cover' style={{ background: card.cover.color }} />}
 							{labels && (
 								<div className='label-container'>
 									{labels.map((label) => {
-										return <div className='label' key={label._id} color={label.color} />;
+										return <div className='label' key={label._id} style={{ background: label.color }} />;
 									})}
 								</div>
 							)}
@@ -139,7 +138,7 @@ const Card = (props) => {
 											</div>
 										)}
 										{card.checklists.length > 0 && (
-											<div className='check--container'>
+											<div className='check-container'>
 												<CheckIcon fontSize='0.5rem' />
 												<span>
 													{checks.c}/{checks.c + checks.n}
@@ -149,8 +148,8 @@ const Card = (props) => {
 									</div>
 								</div>
 								{card.members && (
-									<div className='member-container'>
-										<div className='member-wrapper'>
+									<div className='members-container'>
+										<div className='members-wrapper'>
 											{card.members &&
 												card.members.map((member, i) => {
 													return (

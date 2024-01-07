@@ -39,7 +39,7 @@ const Activity = () => {
 
 	return (
 		<>
-			<div className="Container">
+			<div className="activity-container">
 				<div className="LeftContainer">
 					<MessageIcon fontSize='small' />
 					<Avatar

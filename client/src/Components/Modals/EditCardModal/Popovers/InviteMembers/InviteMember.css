@@ -15,7 +15,7 @@
     justify-content: flex-start;
     gap: 0.3rem;
 }
-
+/* 
 input[type='email'] {
     border: none;
     outline: 2px solid transparent;
@@ -36,7 +36,7 @@ input[type='email']:focus {
     background-color: white;
     color: black;
     outline: 2px solid #0079bf;
-}
+} */
 
 .chip-container {
     width: 100%;

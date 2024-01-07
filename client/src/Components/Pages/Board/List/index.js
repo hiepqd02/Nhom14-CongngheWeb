@@ -135,7 +135,7 @@ const List = (props) => {
 												})}
 												{provided.placeholder}
 												{clickFooter && (
-													<div className='add-title-container' ref={ref}>
+													<div className='add-title-card-container' ref={ref}>
 														<input
 															value={newCardTitle}
 															autoFocus={true}
