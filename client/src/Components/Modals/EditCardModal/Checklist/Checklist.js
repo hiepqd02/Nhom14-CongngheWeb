@@ -26,6 +26,7 @@ import {
 	checklistItemTextSet,
 } from '../../../../Services/cardService';
 import DeleteIcon from '@mui/icons-material/DeleteForeverOutlined';
+import BottomButtonGroup from '../../../Pages/Board/BottomButtonGroup';
 
 const Checklist = (props) => {
 	const dispatch = useDispatch();
@@ -91,13 +92,13 @@ const Checklist = (props) => {
 					{showEdit ? (
 						<TextAreaContainer>
 							<TextArea value={editedText} onChange={(e) => setEditedText(e.target.value)} />
-							{/*<BottomButtonGroup*/}
-							{/*	title='Save'*/}
-							{/*	clickCallback={handleTextChange}*/}
-							{/*	closeCallback={() => {*/}
-							{/*		setShowEdit(false);*/}
-							{/*	}}*/}
-							{/*/>*/}
+							<BottomButtonGroup
+								title='Save'
+								clickCallback={handleTextChange}
+								closeCallback={() => {
+									setShowEdit(false);
+								}}
+							/>
 						</TextAreaContainer>
 					) : (
 						<>
@@ -160,18 +161,18 @@ const Checklist = (props) => {
 								onChange={(e) => setNewItem(e.target.value)}
 								placeholder='Add an item'
 							/>
-							{/*<BottomButtonGroup*/}
-							{/*	title='Add'*/}
-							{/*	clickCallback={() => handleAddChecklistItem(props._id)}*/}
-							{/*	closeCallback={() => setShowAddItem(false)}*/}
-							{/*/>*/}
-						</TextAreaContainer >
+							<BottomButtonGroup
+								title='Add'
+								clickCallback={() => handleAddChecklistItem(props._id)}
+								closeCallback={() => setShowAddItem(false)}
+							/>
+						</TextAreaContainer>
 					) : (
 						<Button clickCallback={() => setShowAddItem(true)} title='Add an item' />
 					)}
-				</RightColumn >
-			</Row >
-		</Container >
+				</RightColumn>
+			</Row>
+		</Container>
 	);
 };
 

@@ -12,9 +12,16 @@
 
 .add-list-button {
   //@extend .invite-button; // Assuming you want to extend the styles from InviteButton
-  display: inline;
+  display: flex;
   width: 6rem;
   margin-left: -2px;
+  color: #fff;
+  background-color: #0079bf;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  height: 1.5rem;
+  cursor: pointer;
 }
 
 .icon-wrapper {

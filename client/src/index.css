@@ -9,6 +9,8 @@
     font-family: "Nunito" !important;
 }
 
+body{margin: 0;}
+
 @font-face {
     font-family: "Nunito";
     src: local("Nunito"),

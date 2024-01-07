@@ -1,20 +1,16 @@
 $scrollbar-width: 1rem;
 
-.Container {
-  //Todo: fix this
-  //${(props) => props.isImage ? 'background-image:' + props.bgImage + ';' :'background-color: ' + props.bgImage + ';'}
+.board-container {
   background-repeat: no-repeat;
   background-position: 50%;
   zoom: 1;
-  margin-top: 40px;
-  padding-top: 3rem;
-  height: fit-content;
   background-size: cover;
+  padding-top: 10px;
 }
 
 .ListContainer {
   box-sizing: border-box;
-  height: calc(100vh - 3rem - 52px);
+  height: calc(100vh - 72px);
   display: flex;
   flex-direction: row;
   padding: 0rem 1rem;

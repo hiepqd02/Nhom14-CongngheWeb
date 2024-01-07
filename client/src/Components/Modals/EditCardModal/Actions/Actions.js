@@ -8,7 +8,7 @@ const Actions = () => {
 	const card = useSelector((state) => state.card);
 	const dispatch = useDispatch();
 	return (
-		<div className="Container">
+		<div className="action-container">
 			<div className="Title">Actions</div>
 			<Button
 				clickCallback={() => {

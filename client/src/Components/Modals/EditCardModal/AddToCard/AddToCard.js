@@ -25,7 +25,7 @@ const AddToCard = () => {
 	const [labelsBackArrow, setLabelsBackArrow] = React.useState(false);
 	const [labelsTitle, setLabelsTitle] = React.useState('Labels');
 	return (
-		<div className="Container">
+		<div className="add-to-card-container">
 			<div className="Title">Add to card</div>
 
 			<Button
@@ -93,11 +93,11 @@ const AddToCard = () => {
 				/>
 			)}
 
-			<Button
+			{/* <Button
 				clickCallback={(event) => setDatePopover(event.currentTarget)}
 				title='Dates'
 				icon={<DateIcon fontSize='small' />}
-			></Button>
+			></Button> */}
 			{datePopover && (
 				<BasePopover
 					anchorElement={datePopover}

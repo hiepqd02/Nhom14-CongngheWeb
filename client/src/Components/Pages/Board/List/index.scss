@@ -66,40 +66,52 @@ $title-new-card-input-focus-border: 2px solid #0079bf;
 $title-new-card-input-placeholder-font-weight: 600;
 $title-new-card-input-placeholder-color: rgba(0, 0, 0, 0.5);
 
-container, header, title-placeholder, title-input, card-container, card-wrapper, footer-button, span, add-title-card-container, title-new-card-input {
+.container,
+.header,
+.title-placeholder,
+.title-input,
+.card-container,
+.card-wrapper,
+.footer-button,
+span,
+.add-title-card-container,
+.title-new-card-input {
   display: flex;
 }
 
-container {
+.list-container {
   box-sizing: content-box;
-  border: 1px solid $container-border-color;
-  height: $container-height;
-  max-height: $container-max-height;
-  min-width: $container-min-width;
-  width: $container-width;
-  max-width: $container-max-width;
-  margin: $container-margin;
+  border: 1px solid white;
+  height: fit-content;
+  max-height: 98%;
+  min-width: 15rem;
+  width: 15rem;
+  max-width: 16rem;
+  margin: 0rem 0.2rem;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 0.3rem;
-  border-radius: $container-border-radius;
-  background-color: $container-background-color;
-  padding: $container-padding;
+  border-radius: 3px;
+  background-color: #ebecf0;
+  padding: 0.3rem;
 }
 
-header {
-  width: $header-width;
+.header {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: $header-gap;
+  gap: 0.3rem;
 }
 
-title-placeholder {
-  display: block;
+.title-placeholder {
+  // display: $ {
+  //   (props)=>(props.show ? 'none' : 'block')
+  // }
   width: 100%;
-  padding-left: $title-placeholder-padding-left;
+  padding-left: 0.3rem;
   border: none;
   border-radius: 1px;
   background-color: transparent;
@@ -110,11 +122,10 @@ title-placeholder {
   cursor: pointer;
 }
 
-title-input {
-  display: none;
+input {
   width: 100%;
-  padding-left: $title-input-padding-left;
-  padding-bottom: $title-input-padding-bottom;
+  padding-left: 0.3rem;
+  padding-bottom: 0.2rem;
   border: none;
   border-radius: 1px;
   background-color: transparent;
@@ -125,30 +136,30 @@ title-input {
   cursor: pointer;
 
   &:focus {
-    background-color: $title-input-focus-background-color;
-    outline: $title-input-focus-outline-color;
+    background-color: white;
+    outline: 2px solid #0079bf;
     cursor: text;
   }
 }
 
-card-container {
-  height: $card-container-height;
-  width: $card-container-width;
+.card-container {
+  height: 100%;
+  width: 100%;
   box-sizing: content-box;
 }
 
-card-wrapper {
+.card-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
   box-sizing: content-box;
-  overflow-x: $card-wrapper-overflow-x;
-  overflow-y: $card-wrapper-overflow-y;
+  overflow-x: hidden;
+  overflow-y: auto;
   height: fit-content;
-  max-height: $card-wrapper-max-height;
+
   justify-content: flex-start;
-  padding: $card-wrapper-padding;
+  padding: 0.1rem 0.1rem 0.1rem 0rem;
   width: 100%;
 
   // @include #{$breakpoint-xs} {
@@ -161,49 +172,81 @@ card-wrapper {
     width: $card-wrapper-scrollbar-width;
   }
 
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 0.75rem;
+    width: 0.5rem;
+  }
+
   &::-webkit-scrollbar-track {
-    background: $card-wrapper-scrollbar-track-background;
+    background: rgba(255, 255, 255, 0.4);
     margin-left: 5px;
     border-radius: 5px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $card-wrapper-scrollbar-thumb-background;
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 5px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: $card-wrapper-scrollbar-thumb-hover-background;
+    background: rgba(0, 0, 0, 0.2);
   }
 }
 
-footer-button {
+.footer-button {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: $footer-button-background-color;
-  border: $footer-button-border;
-  border-radius: $footer-button-border-radius;
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
   align-self: flex-end;
   justify-self: flex-end;
   cursor: pointer;
-  gap: $footer-button-gap;
-  color: $footer-button-color;
-  transition: $footer-button-transition-duration ease-in;
+  gap: 0.3rem;
+  color: #636363;
+  transition: 150ms ease-in;
 
   &:hover {
-    background-color: $footer-button-hover-background-color;
+    background-color: rgba(0, 0, 0, 0.1);
   }
 }
 
 span {
-  font-size: $span-font-size;
+  font-size: 0.85rem;
 }
 
-add-title-card-container {
+.add-title-card-container {
   box-sizing: border-box;
-  margin-top: $add-title-card-container-margin-top;
-  padding: $add-title-card-container-padding;
-  min-width: $add-title-card-container-min-width;
+  margin-top: 0.2rem;
+  padding: 0rem 0.2rem;
+  min-width: 14.7rem;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0.5rem;
+
+  input {
+    border: 2px solid transparent;
+    border-radius: 3px;
+    resize: none;
+    font-size: 0.75rem;
+    color: #000;
+    padding: 0.4rem 0.5rem;
+    min-height: 4rem;
+    max-height: 7rem;
+    transition: 500ms ease-in;
+    outline: none;
+
+    &:focus {
+      border: 2px solid #0079bf;
+    }
+
+    &::placeholder {
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.5);
+    }
+  }
 }

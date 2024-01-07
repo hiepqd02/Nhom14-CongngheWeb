@@ -35,16 +35,16 @@ $top-bar-padding: 1rem;
 $outline-color: rgba(255, 255, 255, 0.25);
 $outline-hover-color: #0079bf;
 
-top-bar,
-left-wrapper,
-right-wrapper,
-invite-button,
-text-span,
-board-name-input {
+.top-bar,
+.left-wrapper,
+.right-wrapper,
+.invite-button,
+.text-span,
+.board-name-input {
   display: flex;
 }
 
-top-bar {
+.top-bar {
   height: 52px;
   width: 100%;
   display: flex;
@@ -59,7 +59,7 @@ top-bar {
   // }
 }
 
-left-wrapper {
+.left-wrapper {
   display: flex;
   flex-direction: row;
   flex: 3;
@@ -70,7 +70,7 @@ left-wrapper {
   gap: 1rem;
 }
 
-right-wrapper {
+.right-wrapper {
   display: flex;
   flex: 1;
   height: 100%;
@@ -79,7 +79,7 @@ right-wrapper {
   justify-content: flex-end;
 }
 
-invite-button {
+.invite-button {
   display: flex;
   border: none;
   height: 2rem;
@@ -97,13 +97,13 @@ invite-button {
   }
 }
 
-text-span {
+.text-span {
   font-size: 0.85rem;
   font-weight: 600;
 
 }
 
-board-name-input {
+.board-name-input {
   height: 1.75rem;
   background-color: rgba(255, 255, 255, 0.25);
   border: none;

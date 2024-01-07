@@ -41,117 +41,150 @@ const Card = (props) => {
 			transitionDuration: `80ms`,
 		};
 	}
-	//${snapshot.isDragging ? 'dragging' : ''}
+
 	return (
 		<>
-		  <Draggable onClick={handleOpenClose}>
-			{card.cover.isSizeOne && <div className="cover" style={{ backgroundColor: card.cover.color }}></div>}
-			{labels && (
-			  <div className="label-container">
-				{labels.map((label) => (
-				  <div key={label._id} className="label" style={{ backgroundColor: label.color }}></div>
-				))}
-			  </div>
-			)}
-	  
-			<div className="card-title">{card.title}</div>
-	  
-			<div className="footer-container">
-			  <div className="icon-group-container">
-				<div className="icon-group-wrapper">
-				  {card.watchers.length > 0 && <FollowIcon className="icon-wrapper"></FollowIcon>}
-				  {card.attachments.length > 0 && (
-					<div className="attachment-container">
-					  <AttachmentIcon></AttachmentIcon>
-					  <span>{card.attachments.length}</span>
-					</div>
-				  )}
-	  
-				  {(card.date.dueDate || card.date.startDate) && (
-					<div
-					  className="date-container"
-					  style={{
-						backgroundColor: card.date.completed
-						  ? '#61bd4f'
-						  : moment(card.date.dueDate).toDate().getTime() < new Date().getTime()
-						  ? '#ec9488'
-						  : 'transparent',
-					  }}
-					>
-					  <WatchIcon
-						style={{
-						  color:
-							card.date.completed || moment(card.date.dueDate).toDate().getTime() < new Date().getTime()
-							  ? 'white'
-							  : 'darkgray',
-						}}
-					  ></WatchIcon>
-					  <span
-						style={{
-						  color:
-							card.date.completed || moment(card.date.dueDate).toDate().getTime() < new Date().getTime()
-							  ? 'white'
-							  : 'darkgray',
-						}}
-					  >{`${card.date.startDate ? formatDate(card.date.startDate) : ''}${
-						card.date.startDate ? (card.date.dueDate ? ' - ' : '') : ''
-					  }${card.date.dueDate ? formatDate(card.date.dueDate) : ''}${
-						card.date.dueTime ? ' at ' + card.date.dueTime : ''
-					  }`}</span>
-					</div>
-				  )}
-				  {card.description && <DescriptiondIcon></DescriptiondIcon>}
-				  {comment > 0 && (
-					<div className="comment-container">
-					  <CommentIcon></CommentIcon>
-					  <span>{comment}</span>
-					</div>
-				  )}
-				  {card.checklists.length > 0 && (
-					<div className="check-container">
-					  <CheckIcon></CheckIcon>
-					  <span>{`${checks.c}/${checks.c + checks.n}`}</span>
-					</div>
-				  )}
-				</div>
-			  </div>
-	  
-			  {card.members && (
-				<div className="members-container">
-				  <div className="members-wrapper">
-					{card.members &&
-					  card.members.map((member, i) => (
-						<Avatar
-						  key={i}
-						  style={{
-							width: '28px',
-							height: '28px',
-							backgroundColor: member.color,
-							fontSize: '0.875rem',
-							fontWeight: '800',
-						  }}
+			<Draggable draggableId={props.info._id} index={props.index}>
+				{(provided, snapshot) => {
+					return (
+						<div className='container'
+							onClick={handleOpenClose}
+							{...provided.dragHandleProps}
+							{...provided.draggableProps}
+							style={getStyle(provided.draggableProps.style, snapshot)}
+							ref={provided.innerRef}
+							isDragging={snapshot.isDragging}
+							color={!card.cover.isSizeOne ? card.cover.color : '#fff'}
+							padding={card.cover.color && card.cover.isSizeOne}
 						>
-						  {member.name[0].toUpperCase()}
-						</Avatar>
-					  ))}
-				  </div>
-				</div>
-			  )}
-			</div>
-		  </Draggable>
-	  
-		  {openModal && (
-			<div className="edit-card-modal">
-			  <EditCard
-				open={openModal}
-				callback={handleOpenClose}
-				ids={{ cardId: props.info._id, listId: props.listId, boardId: props.boardId }}
-			  />
-			</div>
-		  )}
+							{card.cover.isSizeOne && <div className='cover' color={card.cover.color} />}
+							{labels && (
+								<div className='label-container'>
+									{labels.map((label) => {
+										return <div className='label' key={label._id} color={label.color} />;
+									})}
+								</div>
+							)}
+
+							<div className='card-title'>{card.title}</div>
+							<div className='footer-container'>
+								<div className='icon-group-container'>
+									<div className='icon-group-wrapper'>
+										{card.watchers.length > 0 && (
+											<div className='icon-wrapper'>
+												<FollowIcon fontSize='0.5rem' />
+											</div>
+										)}
+										{card.attachments.length > 0 && (
+											<div className='attachment-container'>
+												<AttachmentIcon fontSize='small' />
+												<span>{card.attachments.length}</span>
+											</div>
+										)}
+
+										{(card.date.dueDate || card.date.startDate) && ( //#ec9488, #eb5a46 #61bd4f
+											<div className='date-container'
+												backColor={
+													card.date.completed
+														? '#61bd4f'
+														: moment(card.date.dueDate).toDate().getTime() <
+															new Date().getTime()
+															? '#ec9488'
+															: 'transparent'
+												}
+												hoverBg={
+													card.date.completed
+														? '#81dd6f'
+														: moment(card.date.dueDate).toDate().getTime() <
+															new Date().getTime()
+															? '#eb5a46'
+															: 'lightgray'
+												}
+												color={
+													card.date.completed ||
+														moment(card.date.dueDate).toDate().getTime() < new Date().getTime()
+														? 'white'
+														: 'darkgray'
+												}
+											>
+												<WatchIcon
+													style={{
+														color:
+															card.date.completed ||
+																moment(card.date.dueDate).toDate().getTime() <
+																new Date().getTime()
+																? 'white'
+																: 'darkgray',
+													}}
+													fontSize='0.5rem'
+												/>
+												<span
+													color={
+														card.date.completed ||
+															moment(card.date.dueDate).toDate().getTime() <
+															new Date().getTime()
+															? 'white'
+															: 'darkgray'
+													}
+												>{`${card.date.startDate ? formatDate(card.date.startDate) : ''}${card.date.startDate ? (card.date.dueDate ? ' - ' : '') : ''
+													}${card.date.dueDate ? formatDate(card.date.dueDate) : ''}${card.date.dueTime ? ' at ' + card.date.dueTime : ''
+													}`}</span>
+											</div>
+										)}
+										{card.description && <DescriptiondIcon fontSize='0.5rem' />}
+										{comment > 0 && (
+											<div className='comment-container'>
+												<CommentIcon fontSize='0.5rem' />
+												<span>{comment}</span>
+											</div>
+										)}
+										{card.checklists.length > 0 && (
+											<div className='check--container'>
+												<CheckIcon fontSize='0.5rem' />
+												<span>
+													{checks.c}/{checks.c + checks.n}
+												</span>
+											</div>
+										)}
+									</div>
+								</div>
+								{card.members && (
+									<div className='member-container'>
+										<div className='member-wrapper'>
+											{card.members &&
+												card.members.map((member, i) => {
+													return (
+														<Avatar
+															key={i}
+															sx={{
+																width: 28,
+																height: 28,
+																bgcolor: member.color,
+																fontSize: '0.875rem',
+																fontWeight: '800',
+															}}
+														>
+															{member.name[0].toUpperCase()}
+														</Avatar>
+													);
+												})}
+										</div>
+									</div>
+								)}
+							</div>
+						</div>
+					);
+				}}
+			</Draggable>
+			{openModal && (
+				<EditCard
+					open={openModal}
+					callback={handleOpenClose}
+					ids={{ cardId: props.info._id, listId: props.listId, boardId: props.boardId }}
+				/>
+			)}
 		</>
-	  );
-	  
+	);
 };
 
 export default Card;

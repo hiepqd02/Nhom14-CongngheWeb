@@ -13,8 +13,8 @@ const AddList = (props) => {
 	const ref = useRef();
 
 	useEffect(() => {
-		if(addList)
-		ref.current.focus();
+		if (addList)
+			ref.current.focus();
 	}, [addList]);
 
 	const handleCloseClick = () => {
@@ -30,26 +30,26 @@ const AddList = (props) => {
 
 	return (
 		<>
-		  <div className="AddAnotherListContainer">
-			<div className="AddAnotherListButton" show={addList} onClick={() => setAddList(true)}>
-			  <AddIcon />
-			  <span>Add another List</span>
+			<div className="AddAnotherListContainer">
+				<div className="AddAnotherListButton" onClick={() => setAddList(true)}>
+					<AddIcon style={{ color: "#000" }} />
+					<span>Add another List</span>
+				</div>
+				<div className="AddListContainer" style={{ display: addList ? 'flex' : 'none' }} >
+					<div className="AddListWrapper">
+						<input
+							className="ListTitleInput"
+							ref={ref}
+							placeholder="Enter list title"
+							value={title}
+							onChange={(e) => setTitle(e.target.value)}
+						/>
+						<BottomButtonGroup title="Add list" clickCallback={handleAddClick} closeCallback={handleCloseClick} />
+					</div>
+				</div>
 			</div>
-			<div className="AddListContainer" show={addList}>
-			  <div className="AddListWrapper">
-				<input
-				  className="ListTitleInput"
-				  ref={ref}
-				  placeholder="Enter list title"
-				  value={title}
-				  onChange={(e) => setTitle(e.target.value)}
-				/>
-				<BottomButtonGroup title="Add list" clickCallback={handleAddClick} closeCallback={handleCloseClick} />
-			  </div>
-			</div>
-		  </div>
 		</>
-	  );
+	);
 };
 
 export default AddList;

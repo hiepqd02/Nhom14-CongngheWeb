@@ -46,17 +46,19 @@ $main-color: #ebecf0;
   border-radius: 3px;
   cursor: pointer;
   transition: 250ms ease;
-
-  &.show {
-    background-color: transparent;
-  }
 }
 
 .AddAnotherListButton {
   width: 100%;
   display: flex;
-  &:not(.show) {
-    display: none;
+  justify-content: center;
+
+  align-items: center;
+
+  span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #000;
   }
 }
 
@@ -91,6 +93,5 @@ $main-color: #ebecf0;
   justify-content: flex-start;
   display: inline;
 
-  &:focus {
-  }
+  &:focus {}
 }

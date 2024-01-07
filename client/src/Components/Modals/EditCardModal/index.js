@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './editcard.css';
 import Modal from '@mui/material/Modal';
 import Actions from './Actions/Actions';
 import Activity from './Activity/Activity';
@@ -8,35 +9,18 @@ import Description from './Description/Description';
 import Attachments from './Attachments/Attachments';
 import Features from './Features/Features';
 import Title from './Title/Title';
-//import CardLoadingSvg from '../../../Images/cardLoading.svg';
+import CardLoadingSvg from '../../../assets/Images/cardLoading.svg';
 import { getCard } from '../../../Services/cardService';
 import { useSelector, useDispatch } from 'react-redux';
 import IconButton from './ReUsableComponents/IconButton';
 import CoverIcon from '@mui/icons-material/TableChartOutlined';
 import CloseIcon from '@mui/icons-material/Close';
-import {
-	Container,
-	Wrapper,
-	CoverContainer,
-	MainContainer,
-	TitleContainer,
-	FeaturesContainer,
-	DescriptionContainer,
-	ChecklistContainer,
-	ActivityContainer,
-	RightContainer,
-	AddToCardContainer,
-	ActionsContainer,
-	LoadingScreen,
-	AttachmentContainer,
-	CoverButtonWrapper,
-	CloseIconWrapper,
-} from './styled';
-//import './index.scss';
+
 export default function EditCard(props) {
 	const { cardId, listId, boardId } = props.ids;
 	const dispatch = useDispatch();
 	const thisCard = useSelector((state) => state.card);
+	console.log("props", props);
 	React.useEffect(() => {
 		if (props.open) {
 			getCard(cardId, listId, boardId, dispatch);
@@ -46,62 +30,61 @@ export default function EditCard(props) {
 	return (
 		<div style={{ position: 'relative' }}>
 			<Modal open={props.open} onClose={props.callback} style={{ overflow: 'auto' }}>
-				<Container>
-					<CoverContainer color={!thisCard.pending ? thisCard.cover.color : null}>
-						<CoverButtonWrapper>
+				<div className="edit-card-container">
+					<div className="CoverContainer" style={{ backgroundColor: !thisCard.pending ? thisCard.cover.color : null }}>
+						<div className="CoverButtonWrapper">
 							<IconButton title='Cover' icon={<CoverIcon fontSize='small' />} />
-						</CoverButtonWrapper>
-					</CoverContainer>
-					<TitleContainer>{!thisCard.pending && <Title />}</TitleContainer>
-					<Wrapper>
-						<MainContainer>
+						</div>
+					</div>
+					<div className="TitleContainer">{!thisCard.pending && <Title />}</div>
+					<div className="edit-card-wrapper">
+						<div className="MainContainer">
 							{!thisCard.pending ? (
 								<>
 									{(thisCard.members.length > 0 ||
 										thisCard.labels.filter((label) => label.selected).length > 0 ||
 										thisCard.date.startDate ||
 										thisCard.date.dueDate) && (
-										<FeaturesContainer>
-											<Features />
-										</FeaturesContainer>
-									)}
-									<DescriptionContainer>
+											<div className="FeaturesContainer">
+												<Features />
+											</div>
+										)}
+									<div className="DescriptionContainer">
 										<Description />
-									</DescriptionContainer>
+									</div>
 									{thisCard.attachments.length > 0 && (
-										<AttachmentContainer>
+										<div className="AttachmentContainer">
 											<Attachments />
-										</AttachmentContainer>
+										</div>
 									)}
 									{thisCard.checklists.length > 0 && (
-										<ChecklistContainer>
+										<div className="ChecklistContainer">
 											{thisCard.checklists.map((list) => {
 												return <Checklist key={list._id} {...list} />;
 											})}
-										</ChecklistContainer>
+										</div>
 									)}
-									<ActivityContainer>
+									<div className="ActivityContainer">
 										<Activity />
-									</ActivityContainer>
+									</div>
 								</>
 							) : (
-								//image={CardLoadingSvg}
-								<LoadingScreen  />
+								<div className="LoadingScreen" style={{ backgroundImage: `url(${CardLoadingSvg})` }} />
 							)}
-						</MainContainer>
-						<RightContainer>
-							<AddToCardContainer>
+						</div>
+						<div className="RightContainer">
+							<div className="AddToCardContainer">
 								<AddToCard />
-							</AddToCardContainer>
-							<ActionsContainer>
+							</div>
+							<div className="ActionsContainer">
 								<Actions />
-							</ActionsContainer>
-						</RightContainer>
-					</Wrapper>
-					<CloseIconWrapper onClick={props.callback}>
+							</div>
+						</div>
+					</div>
+					<div className="CloseIconWrapper" onClick={props.callback}>
 						<CloseIcon fontSize='small' color='black' />
-					</CloseIconWrapper>
-				</Container>
+					</div>
+				</div>
 			</Modal>
 		</div>
 	);

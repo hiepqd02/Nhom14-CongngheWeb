@@ -1,4 +1,4 @@
-.Container {
+.edit-card-container {
 	outline: none;
 	box-sizing: border-box;
 	background-color: #f4f5f7;
@@ -12,9 +12,7 @@
 }
 
 .CoverContainer {
-	display: block; /* Replace with specific value */
 	min-height: 7.25rem;
-	background-color: #000000; /* Replace with specific value */
 	margin: -0.5rem 0rem 0rem -0.25rem;
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
@@ -33,7 +31,7 @@
 	margin-bottom: 2rem;
 }
 
-.Wrapper {
+.edit-card-wrapper {
 	width: 100%;
 	display: flex;
 	flex-direction: row;

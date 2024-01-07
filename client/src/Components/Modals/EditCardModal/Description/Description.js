@@ -4,6 +4,7 @@ import DescriptionIcon from '@mui/icons-material/TextSnippetOutlined';
 import { useDispatch, useSelector } from 'react-redux';
 import { descriptionUpdate } from '../../../../Services/cardService';
 import './Description.css';
+import BottomButtonGroup from '../../../Pages/Board/BottomButtonGroup';
 
 const Description = () => {
 	const thisCard = useSelector((state) => state.card);
@@ -24,7 +25,7 @@ const Description = () => {
 
 	useEffect(() => {
 		if (inputFocus) {
-			ref.current.focus();
+			ref?.current?.focus();
 		}
 	}, [inputFocus]);
 
@@ -59,14 +60,14 @@ const Description = () => {
 					/>
 				)}
 				<div style={{ display: inputFocus ? 'block' : 'none' }}>
-					{/*<BottomButtonGroup*/}
-					{/*	closeCallback={() => {*/}
-					{/*		setInputFocus(false);*/}
-					{/*		setDescription(thisCard.description);*/}
-					{/*	}}*/}
-					{/*	clickCallback={handleSaveClick}*/}
-					{/*	title='Save'*/}
-					{/*/>*/}
+					<BottomButtonGroup
+						closeCallback={() => {
+							setInputFocus(false);
+							setDescription(thisCard.description);
+						}}
+						clickCallback={handleSaveClick}
+						title='Save'
+					/>
 				</div>
 			</div>
 		</div>

@@ -65,14 +65,16 @@ const Board = (props) => {
 	return (
 		<>
 			<Navbar searchString={searchString} setSearchString={setSearchString} />
-			<div className={`Container`} style={isImage ? { background: backgroundImageLink.split('?')[0] } : { background: backgroundImageLink }}>
+			<div className='board-container'
+				style={isImage ? { backgroundImage: `url(${backgroundImageLink.split('?')[0]})` } : { background: backgroundImageLink }}
+			>
 				<TopBar />
 				{(loading || loadingListService) && <Loading />}
 				<DragDropContext onDragEnd={onDragEnd}>
 					<Droppable droppableId='all-columns' direction='horizontal' type='column'>
 						{(provided, snapshot) => {
 							return (
-								<div className="ListContainer" {...provided.droppableProps} ref={provided.innerRef}>
+								<div className='ListContainer' {...provided.droppableProps} ref={provided.innerRef}>
 									{!loading &&
 										allLists.map((list, index) => {
 											return (

@@ -3,7 +3,7 @@
     width: 100%;
     background-color: rgb(255, 255, 255);
     backdrop-filter: blur(24px);
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     display: flex;
@@ -19,6 +19,7 @@
             text-shadow: -5px 5px 0 #fff;
             font-size: 24px;
             font-weight: 700;
+            cursor: pointer;
         }
     }
 
