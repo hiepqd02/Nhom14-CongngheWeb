@@ -6,11 +6,11 @@ const BottomButtonGroup = (props) => {
 	const { clickCallback, closeCallback, title } = props;
 	
 	return (
-		<div className="Row">
-		  <div className="AddListButton" onClick={() => clickCallback()}>
+		<div className="row">
+		  <div className="add-list-button" onClick={() => clickCallback()}>
 			{title}
 		  </div>
-		  <div className="IconWrapper">
+		  <div className="icon-wrapper">
 			<CloseIcon onClick={() => closeCallback()} fontSize="medium" />
 		  </div>
 		</div>

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { xs } from '../../../../BreakPoints';
 export const Container = styled.div`
 	padding-left: 3.5rem;
 	display: flex;
@@ -8,9 +7,6 @@ export const Container = styled.div`
 	justify-content: flex-start;
 	gap: 1rem;
 	flex-wrap: wrap;
-	${xs({
-		paddingLeft: '1rem',
-	})};
 `;
 
 export const FeatureContainer = styled.div`
@@ -103,10 +99,6 @@ export const DateDropDown = styled.div`
 	&:hover {
 		background-color: rgba(0, 0, 0, 0.1);
 	}
-	${xs({
-		textAlign: 'center',
-		width: '90%',
-	})};
 `;
 
 export const CompleteLabel = styled.div`

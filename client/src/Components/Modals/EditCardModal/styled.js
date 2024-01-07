@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { sm, xs } from '../../../BreakPoints';
 
 export const Container = styled.div`
 	outline: none;
@@ -12,12 +11,6 @@ export const Container = styled.div`
 	margin: 3rem auto 5rem auto;
 	padding: 0.5rem 0rem 1rem 0.25rem;
 	position: relative;
-	${sm({
-		width: '90%',
-	})}
-	${xs({
-		width: '98%',
-	})}
 `;
 
 export const CoverContainer = styled.div`
@@ -46,11 +39,6 @@ export const Wrapper = styled.div`
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-	${xs({
-		flexDirection: 'column',
-		paddingRight: '1rem',
-		gap: '1rem',
-	})}
 `;
 
 export const MainContainer = styled.div`

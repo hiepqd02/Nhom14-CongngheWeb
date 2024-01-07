@@ -35,35 +35,43 @@ $top-bar-padding: 1rem;
 $outline-color: rgba(255, 255, 255, 0.25);
 $outline-hover-color: #0079bf;
 
-top-bar, left-wrapper, right-wrapper, invite-button, text-span, board-name-input {
+top-bar,
+left-wrapper,
+right-wrapper,
+invite-button,
+text-span,
+board-name-input {
   display: flex;
 }
 
 top-bar {
-  height: $top-bar-height;
+  height: 52px;
   width: 100%;
+  display: flex;
   flex-direction: column;
   align-items: space-between;
-  padding: 0 $top-bar-padding;
+  padding: 0rem 1rem;
   justify-content: center;
   flex-wrap: wrap;
-  gap: $top-bar-gap;
-
+  gap: 0.3rem;
   // @include #{$breakpoint-xs} {
   //   gap: $top-bar-gap-xs;
   // }
 }
 
 left-wrapper {
+  display: flex;
+  flex-direction: row;
   flex: 3;
   width: 75%;
   align-items: center;
   justify-content: flex-start;
   height: 100%;
-  gap: $left-wrapper-gap;
+  gap: 1rem;
 }
 
 right-wrapper {
+  display: flex;
   flex: 1;
   height: 100%;
   flex-direction: row;
@@ -72,70 +80,73 @@ right-wrapper {
 }
 
 invite-button {
+  display: flex;
   border: none;
-  height: $invite-button-height;
-  color: $white;
-  padding: 0 $top-bar-padding;
+  height: 2rem;
+  color: white;
+  padding: 0rem 1rem;
   align-items: center;
-  gap: $invite-button-gap;
+  gap: 0.5rem;
   border-radius: 3px;
-  background-color: $button-background-color;
+  background-color: #0079bf;
   cursor: pointer;
-  transition: $transition-duration $transition-ease;
+  transition: 250ms ease;
 
   &:hover {
-    background-color: $hover-background-color;
+    background-color: #00599f;
   }
 }
 
 text-span {
-  font-size: $text-span-font-size;
+  font-size: 0.85rem;
+  font-weight: 600;
 
-  // @include #{$breakpoint-xs} {
-  //   display: none;
-  // }
 }
 
 board-name-input {
-  height: $board-name-input-height;
-  background-color: rgba($white, 0.25);
+  height: 1.75rem;
+  background-color: rgba(255, 255, 255, 0.25);
   border: none;
   border-radius: 1px;
-  font-size: $board-name-input-font-size;
+  font-size: 1.1rem;
   text-align: center;
-  min-width: $board-name-input-min-width;
-  max-width: $board-name-input-max-width;
+  min-width: 6.5rem;
+  max-width: 10rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  //width: #{'#{props.value.length * 0.75}rem'};
+
+  // width: $ {
+  //   (props)=>props.value.length * 0.75+'rem'
+  // }
+
   font-weight: 600;
-  color: $white;
-  outline: 2px solid $outline-color;
-  transition: $transition-duration $transition-ease;
+  color: white;
+  outline: 2px solid rgba(255, 255, 255, 0.25);
+  transition: 250ms ease;
   cursor: pointer;
 
   &:focus {
-    background-color: $white;
-    outline: 2px solid $outline-hover-color;
-    color: $black;
+    background-color: white;
+    outline: 2px solid #0079bf;
+    color: black;
     cursor: text;
+  }
 
-    &:hover {
-      background-color: $white;
-      outline: 2px solid $outline-hover-color;
-      color: $black;
-      cursor: text;
-    }
+  &:focus:hover {
+    background-color: white;
+    outline: 2px solid #0079bf;
+    color: black;
+    cursor: text;
   }
 
   &:hover {
-    background-color: rgba($white, 0.5);
-    outline: 2px solid rgba($white, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+    outline: 2px solid rgba(255, 255, 255, 0.5);
   }
 
   &::placeholder {
-    color: $placeholder-color;
+    color: #d0d0d0;
   }
 
   // @include #{$breakpoint-xs} {

@@ -1,6 +1,6 @@
-@import '../../../../../BreakPoints';
+// @import '../../../../../BreakPoints';
 
-$breakpoint-xs: xs; // Assuming xs is defined in your BreakPoints file
+// $breakpoint-xs: xs; // Assuming xs is defined in your BreakPoints file
 
 $container-border-color: white;
 $container-height: fit-content;
@@ -151,9 +151,9 @@ card-wrapper {
   padding: $card-wrapper-padding;
   width: 100%;
 
-  @include #{$breakpoint-xs} {
-    max-height: $card-wrapper-max-height-dock;
-  }
+  // @include #{$breakpoint-xs} {
+  //   max-height: $card-wrapper-max-height-dock;
+  // }
 
   &::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -205,5 +205,5 @@ add-title-card-container {
   box-sizing: border-box;
   margin-top: $add-title-card-container-margin-top;
   padding: $add-title-card-container-padding;
-  min-width: $add-title-card-container-min
+  min-width: $add-title-card-container-min-width;
 }

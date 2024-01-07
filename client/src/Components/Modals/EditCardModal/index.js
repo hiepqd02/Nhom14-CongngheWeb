@@ -8,7 +8,7 @@ import Description from './Description/Description';
 import Attachments from './Attachments/Attachments';
 import Features from './Features/Features';
 import Title from './Title/Title';
-import CardLoadingSvg from '../../../Images/cardLoading.svg';
+//import CardLoadingSvg from '../../../Images/cardLoading.svg';
 import { getCard } from '../../../Services/cardService';
 import { useSelector, useDispatch } from 'react-redux';
 import IconButton from './ReUsableComponents/IconButton';
@@ -32,7 +32,7 @@ import {
 	CoverButtonWrapper,
 	CloseIconWrapper,
 } from './styled';
-
+//import './index.scss';
 export default function EditCard(props) {
 	const { cardId, listId, boardId } = props.ids;
 	const dispatch = useDispatch();
@@ -85,7 +85,8 @@ export default function EditCard(props) {
 									</ActivityContainer>
 								</>
 							) : (
-								<LoadingScreen image={CardLoadingSvg} />
+								//image={CardLoadingSvg}
+								<LoadingScreen  />
 							)}
 						</MainContainer>
 						<RightContainer>

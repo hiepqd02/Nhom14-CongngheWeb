@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EditCard from '../../../Modals/EditCardModal/EditCard';
+import EditCard from '../../../Modals/EditCardModal';
 import FollowIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import WatchIcon from '@mui/icons-material/AccessTimeOutlined';
 import DescriptiondIcon from '@mui/icons-material/DescriptionOutlined';
@@ -44,7 +44,7 @@ const Card = (props) => {
 	//${snapshot.isDragging ? 'dragging' : ''}
 	return (
 		<>
-		  <div className={`draggable-container `} onClick={handleOpenClose}>
+		  <Draggable onClick={handleOpenClose}>
 			{card.cover.isSizeOne && <div className="cover" style={{ backgroundColor: card.cover.color }}></div>}
 			{labels && (
 			  <div className="label-container">
@@ -59,10 +59,10 @@ const Card = (props) => {
 			<div className="footer-container">
 			  <div className="icon-group-container">
 				<div className="icon-group-wrapper">
-				  {card.watchers.length > 0 && <div className="icon-wrapper watcher-icon"></div>}
+				  {card.watchers.length > 0 && <FollowIcon className="icon-wrapper"></FollowIcon>}
 				  {card.attachments.length > 0 && (
 					<div className="attachment-container">
-					  <div className="attachment-icon"></div>
+					  <AttachmentIcon></AttachmentIcon>
 					  <span>{card.attachments.length}</span>
 					</div>
 				  )}
@@ -78,15 +78,14 @@ const Card = (props) => {
 						  : 'transparent',
 					  }}
 					>
-					  <div
-						className="watch-icon"
+					  <WatchIcon
 						style={{
 						  color:
 							card.date.completed || moment(card.date.dueDate).toDate().getTime() < new Date().getTime()
 							  ? 'white'
 							  : 'darkgray',
 						}}
-					  ></div>
+					  ></WatchIcon>
 					  <span
 						style={{
 						  color:
@@ -101,16 +100,16 @@ const Card = (props) => {
 					  }`}</span>
 					</div>
 				  )}
-				  {card.description && <div className="description-icon"></div>}
+				  {card.description && <DescriptiondIcon></DescriptiondIcon>}
 				  {comment > 0 && (
 					<div className="comment-container">
-					  <div className="comment-icon"></div>
+					  <CommentIcon></CommentIcon>
 					  <span>{comment}</span>
 					</div>
 				  )}
 				  {card.checklists.length > 0 && (
 					<div className="check-container">
-					  <div className="check-icon"></div>
+					  <CheckIcon></CheckIcon>
 					  <span>{`${checks.c}/${checks.c + checks.n}`}</span>
 					</div>
 				  )}
@@ -122,9 +121,8 @@ const Card = (props) => {
 				  <div className="members-wrapper">
 					{card.members &&
 					  card.members.map((member, i) => (
-						<div
+						<Avatar
 						  key={i}
-						  className="avatar"
 						  style={{
 							width: '28px',
 							height: '28px',
@@ -134,13 +132,13 @@ const Card = (props) => {
 						  }}
 						>
 						  {member.name[0].toUpperCase()}
-						</div>
+						</Avatar>
 					  ))}
 				  </div>
 				</div>
 			  )}
 			</div>
-		  </div>
+		  </Draggable>
 	  
 		  {openModal && (
 			<div className="edit-card-modal">

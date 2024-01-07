@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import BottomButtonGroup from '../../../Pages/BoardPage/BoardComponents/BottomButtonGroup/BottomButtonGroup.js';
+import BottomButtonGroup from '../../../Pages/Board/BottomButtonGroup';
 import {
 	Container,
 	LeftContainer,

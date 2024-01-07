@@ -1,0 +1,128 @@
+$primary-background-color: #f4f5f7;
+$border-radius: 3px;
+$container-width: 48rem;
+$min-container-height: 97vh;
+
+$cover-container-min-height: 7.25rem;
+$cover-button-wrapper-bottom: 0.5rem;
+$cover-button-wrapper-right: 0.5rem;
+$wrapper-margin-bottom: 2rem;
+$main-container-padding-right: 0.5rem;
+$features-container-gap: 1.5rem;
+
+$close-icon-wrapper-top: 0.4rem;
+$close-icon-wrapper-right: 0.4rem;
+$close-icon-wrapper-padding: 0.3rem;
+
+$image: '';
+
+.Container {
+  outline: none;
+  box-sizing: border-box;
+  background-color: $primary-background-color;
+  border-radius: $border-radius;
+  width: $container-width;
+  min-height: $min-container-height;
+  height: fit-content;
+  margin: 3rem auto 5rem auto;
+  padding: 0.5rem 0rem 1rem 0.25rem;
+  position: relative;
+}
+
+.CoverContainer {
+  display: block; // Adjust based on the condition
+  min-height: $cover-container-min-height;
+  background-color: $primary-background-color; // Adjust based on the prop
+  margin: -0.5rem 0rem 0rem -0.25rem;
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  position: relative;
+}
+
+.CoverButtonWrapper {
+  position: absolute;
+  bottom: $cover-button-wrapper-bottom;
+  right: $cover-button-wrapper-right;
+  width: 5.5rem;
+}
+
+.TitleContainer {
+  width: 100%;
+  margin-bottom: $wrapper-margin-bottom;
+}
+
+.Wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.MainContainer {
+  flex: 3;
+  min-height: 50vh;
+  padding-right: $main-container-padding-right;
+  width: 100%;
+  overflow-x: hidden;
+  gap: $features-container-gap;
+  display: flex;
+  flex-direction: column;
+}
+
+.FeaturesContainer {
+  width: 100%;
+}
+
+.DescriptionContainer {
+  width: 100%;
+}
+
+.AttachmentContainer {
+  width: 100%;
+}
+
+.ChecklistContainer {
+  width: 100%;
+}
+
+.ActivityContainer {
+  width: 100%;
+}
+
+.RightContainer {
+  display: flex;
+  gap: $features-container-gap;
+  flex-direction: column;
+  flex: 1;
+}
+
+.AddToCardContainer {}
+
+.ActionsContainer {}
+
+.LoadingScreen {
+  background-image: url($image); // Adjust based on the prop
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.CloseIconWrapper {
+  position: absolute;
+  top: $close-icon-wrapper-top;
+  right: $close-icon-wrapper-right;
+  padding: $close-icon-wrapper-padding;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.065);
+  }
+
+  &:active {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+}

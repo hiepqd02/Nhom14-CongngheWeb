@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Container, RightContainer, Title, DescriptionInput, DescriptionText } from './styled';
 import DescriptionIcon from '@mui/icons-material/TextSnippetOutlined';
-import BottomButtonGroup from '../../../Pages/BoardPage/BoardComponents/BottomButtonGroup/BottomButtonGroup.js';
+import BottomButtonGroup from '../../../Pages/Board/BottomButtonGroup';
 import { useDispatch, useSelector } from 'react-redux';
 import { descriptionUpdate } from '../../../../Services/cardService';
 import './Description.css';

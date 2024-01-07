@@ -4,9 +4,9 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import '../CommonStyled.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { boardTitleUpdate } from '../../../../Services/boardsService';
-//import RightDrawer from '../../../Drawers/RightDrawer/RightDrawer';
-//import BasePopover from '../../../Modals/EditCardModal/ReUsableComponents/BasePopover';
-//import InviteMembers from '../../../Modals/EditCardModal/Popovers/InviteMembers/InviteMembers';
+import RightDrawer from '../../../Drawers/RightDrawer/RightDrawer';
+import BasePopover from '../../../Modals/EditCardModal/ReUsableComponents/BasePopover';
+import InviteMembers from '../../../Modals/EditCardModal/Popovers/InviteMembers/InviteMembers';
 import './index.scss';
 
 const TopBar = () => {
@@ -31,14 +31,14 @@ const TopBar = () => {
 				</div>
 				{invitePopover && (
 					<div className="base-popover">
-						{/* <BasePopover
-				  anchorElement={invitePopover}
-				  closeCallback={() => {
-					setInvitePopover(null);
-				  }}
-				  title="Invite Members"
-				  contents={<InviteMembers closeCallback={() => setInvitePopover(null)} />}
-				/> */}
+						<BasePopover
+							anchorElement={invitePopover}
+							closeCallback={() => {
+								setInvitePopover(null);
+							}}
+							title="Invite Members"
+							contents={<InviteMembers closeCallback={() => setInvitePopover(null)} />}
+						/>
 					</div>
 				)}
 
@@ -57,7 +57,7 @@ const TopBar = () => {
 					<span className="text-span">Show menu</span>
 				</button>
 			</div>
-			{/* <RightDrawer show={showDrawer} closeCallback={() => setShowDrawer(false)} /> */}
+			<RightDrawer show={showDrawer} closeCallback={() => setShowDrawer(false)} />
 		</div>
 	);
 

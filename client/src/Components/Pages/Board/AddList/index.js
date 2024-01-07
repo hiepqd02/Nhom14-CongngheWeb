@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import AddIcon from '@mui/icons-material/Add';
-import BottomButtonGroup from '../BottomButtonGroup/BottomButtonGroup';
+import BottomButtonGroup from '../BottomButtonGroup';
 import { useDispatch } from 'react-redux';
-import { createList } from '../../../../../Services/boardService';
-import '../../CommonStyled.scss';
+import { createList } from '../../../../Services/boardService';
+import '../CommonStyled.scss';
 import './index.scss';
 
 const AddList = (props) => {
