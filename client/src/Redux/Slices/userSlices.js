@@ -53,7 +53,13 @@ export const userSlice = createSlice({
         },
         addNewBoard: (state, action) => {
             state.userInfo.boards.unshift(action.payload);
-        }
+        },
+        logout: (state) => {
+            state.isAuthenticated = false;
+            state.userInfo = null;
+            state.token = null;
+            localStorage.removeItem("token");
+        },
     },
 });
 

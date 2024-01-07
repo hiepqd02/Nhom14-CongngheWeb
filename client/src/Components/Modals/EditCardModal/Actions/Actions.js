@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Title } from './styled';
+import './actions.css';
 import Button from '../ReUsableComponents/IconButton';
 import DeleteIcon from '@mui/icons-material/DeleteOutlineOutlined';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,11 +8,8 @@ const Actions = () => {
 	const card = useSelector((state) => state.card);
 	const dispatch = useDispatch();
 	return (
-		<Container>
-			<Title>Actions</Title>
-			{/* 	<Button title='Move' icon={<ArrowForwardIcon fontSize='1rem' />}></Button>
-			<Button title='Copy' icon={<CopyIcon fontSize='small' />}></Button>
-			<Button title='Watch' icon={<WatchIcon fontSize='small' />}></Button> */}
+		<div className="Container">
+			<div className="Title">Actions</div>
 			<Button
 				clickCallback={() => {
 					cardDelete(card.listId, card.boardId, card.cardId, dispatch);
@@ -20,7 +17,7 @@ const Actions = () => {
 				title='Delete'
 				icon={<DeleteIcon fontSize='small' />}
 			></Button>
-		</Container>
+		</div>
 	);
 };
 

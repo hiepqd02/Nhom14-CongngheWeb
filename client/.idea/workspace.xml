@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="20c9980f-a187-47bb-a150-43bd33d68926" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/BreakPoints.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/styled.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Redux/Slices/listSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Images/cardLoading.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Images/search-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Images/trello-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Images/trello-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Images/trello-right.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/CheckList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/checklist.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/Checklist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist/Checklist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Comment/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Comment/Comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Description/Description.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Description/Description.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/EditCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/EditCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/AddAttachmentPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/AddAttachmentPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/EditAttachmentPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Attachment/EditAttachmentPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Checklist/ChecklistPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Checklist/ChecklistPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Cover/CoverPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Cover/CoverPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/LabelsPopover.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/LabelsPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels/LabelsPopover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Pages/Board/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Pages/Board/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2aFNSeJogYxwYuH8T6D8S8x5DNM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "feat/editCard",
+    "last_opened_file_path": "/Users/thanh/Documents/react_native/Nhom14-CongngheWeb/client/src/Components/Modals/EditCardModal/Checklist",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Checklist" />
+      <recent name="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/LabelsLabels" />
+      <recent name="$PROJECT_DIR$/src/Redux/Slices" />
+      <recent name="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers/Labels" />
+      <recent name="$PROJECT_DIR$/src/Components/Modals/EditCardModal/Popovers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Components/Modals/EditCardModal" />
+      <recent name="$PROJECT_DIR$/src/Redux" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="20c9980f-a187-47bb-a150-43bd33d68926" name="Changes" comment="" />
+      <created>1703910372483</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703910372483</updated>
+      <workItem from="1703910385274" duration="82000" />
+      <workItem from="1703910471715" duration="1562000" />
+      <workItem from="1703912074281" duration="4027000" />
+      <workItem from="1704035004078" duration="169000" />
+      <workItem from="1704035869839" duration="1195000" />
+      <workItem from="1704082348834" duration="443000" />
+      <workItem from="1704165934985" duration="3520000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,5 +1,5 @@
 .boards-container {
-    background-image: url('https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2400x1600/a651551a5214cb84963366cf9eaacb40/photo-1636207543865-acf3ad382295.jpg');
+    // background-image: url('https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-position: 50%;
     background-size: cover;
     height: 100vh;
@@ -7,11 +7,14 @@
     position: fixed;
     top: 0;
     left: 0;
+    background: #FCFAFF;
+
+    .navbar {}
 
     .wrapper {
-        margin-top: 50px;
+        margin-top: 80px;
         width: 100%;
-        height: calc(100vh - 50px);
+        height: calc(100vh - 72px);
         padding: 16px;
         display: flex;
         flex-direction: column;
@@ -70,6 +73,7 @@
             justify-content: center;
             font-weight: 600;
             width: 200px;
+            border-radius: 4px;
             height: 60px;
 
             &:hover {

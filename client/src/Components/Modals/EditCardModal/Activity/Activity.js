@@ -1,14 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {
-	Container,
-	LeftContainer,
-	RightContainer,
-	Title,
-	CommentWrapper,
-	SaveButton,
-	CommentArea,
-	TitleWrapper,
-} from './styled';
 import MessageIcon from '@mui/icons-material/MessageOutlined';
 import Comment from '../Comment/Comment';
 import ActivityLog from '../ActivityLog/ActivityLog';
@@ -16,6 +6,7 @@ import Button from '../ReUsableComponents/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { comment } from '../../../../Services/cardService';
 import { Avatar } from '@mui/material';
+import './Activity.css';
 
 const Activity = () => {
 	const dispatch = useDispatch();
@@ -45,10 +36,11 @@ const Activity = () => {
 			document.removeEventListener('click', handleClickOutside, true);
 		};
 	});
+
 	return (
 		<>
-			<Container>
-				<LeftContainer>
+			<div className="Container">
+				<div className="LeftContainer">
 					<MessageIcon fontSize='small' />
 					<Avatar
 						sx={{
@@ -61,34 +53,38 @@ const Activity = () => {
 					>
 						{user.userInfo.name[0].toUpperCase()}
 					</Avatar>
-				</LeftContainer>
-				<RightContainer>
-					<TitleWrapper>
-						<Title>Activity</Title>
+				</div>
+				<div className="RightContainer">
+					<div className="TitleWrapper">
+						<div className="Title">Activity</div>
 						<Button
 							clickCallback={() => setDetails((prev) => !prev)}
 							title={details ? 'Hide details' : 'Show details'}
 						/>
-					</TitleWrapper>
-					<CommentWrapper ref={ref}>
-						<SaveButton disabled={!newComment} onClick={handleSaveClick} show={focusComment}>
+					</div>
+					<div className="CommentWrapper" ref={ref}>
+						<button className={`SaveButton ${newComment && focusComment ? 'show' : ''}`} onClick={handleSaveClick}>
 							Save
-						</SaveButton>
-						<CommentArea
+						</button>
+						<textarea
+							className="CommentArea"
 							value={newComment}
 							onChange={(e) => setNewComment(e.target.value)}
-							focus={focusComment}
+							onFocus={() => setFocusComment(true)}
+							onBlur={() => setFocusComment(false)}
 							placeholder='Write a comment...'
 						/>
-					</CommentWrapper>
-				</RightContainer>
-			</Container>
-			{card.activities.map((activity) => {
-				if (activity.isComment) {
-					return <Comment key={activity._id} {...activity} />;
-				}
-				return undefined;
-			})}
+					</div>
+				</div>
+			</div>
+			{
+				card.activities.map((activity) => {
+					if (activity.isComment) {
+						return <Comment key={activity._id} {...activity} />;
+					}
+					return undefined;
+				})
+			}
 
 			{details && <ActivityLog />}
 		</>

@@ -1,0 +1,98 @@
+.Container {
+	outline: none;
+	box-sizing: border-box;
+	background-color: #f4f5f7;
+	border-radius: 3px;
+	width: 48rem;
+	min-height: 97vh;
+	height: fit-content;
+	margin: 3rem auto 5rem auto;
+	padding: 0.5rem 0rem 1rem 0.25rem;
+	position: relative;
+}
+
+.CoverContainer {
+	display: block; /* Replace with specific value */
+	min-height: 7.25rem;
+	background-color: #000000; /* Replace with specific value */
+	margin: -0.5rem 0rem 0rem -0.25rem;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	position: relative;
+}
+
+.CoverButtonWrapper {
+	position: absolute;
+	bottom: 0.5rem;
+	right: 0.5rem;
+	width: 5.5rem;
+}
+
+.TitleContainer {
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+.Wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.MainContainer {
+	flex: 3;
+	min-height: 50vh;
+	padding-right: 0.5rem;
+	width: 100%;
+	overflow-x: hidden;
+	gap: 1.5rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.FeaturesContainer,
+.DescriptionContainer,
+.AttachmentContainer,
+.ChecklistContainer,
+.ActivityContainer {
+	width: 100%;
+}
+
+.RightContainer {
+	display: flex;
+	gap: 1.5rem;
+	flex-direction: column;
+	flex: 1;
+}
+
+.AddToCardContainer,
+.ActionsContainer {
+	/* No specific styles */
+}
+
+.LoadingScreen {
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+}
+
+.CloseIconWrapper {
+	position: absolute;
+	top: 0.4rem;
+	right: 0.4rem;
+	padding: 0.3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.CloseIconWrapper:hover {
+	background-color: rgba(0, 0, 0, 0.065);
+}
+
+.CloseIconWrapper:active {
+	background-color: rgba(0, 0, 0, 0.15);
+}

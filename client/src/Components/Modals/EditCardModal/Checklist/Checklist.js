@@ -13,7 +13,7 @@ import {
 	TextArea,
 } from './styled';
 import CheckIcon from '@mui/icons-material/LibraryAddCheckOutlined';
-import BottomButtonGroup from '../../../Pages/Board/BottomButtonGroup';
+//import BottomButtonGroup from '../../../Pages/BoardPage/BoardComponents/BottomButtonGroup/BottomButtonGroup.js';
 import Checkbox from '../ReUsableComponents/Checkbox';
 import Button from '../ReUsableComponents/Button';
 import Progressbar from '../ReUsableComponents/Progressbar';
@@ -91,13 +91,13 @@ const Checklist = (props) => {
 					{showEdit ? (
 						<TextAreaContainer>
 							<TextArea value={editedText} onChange={(e) => setEditedText(e.target.value)} />
-							<BottomButtonGroup
-								title='Save'
-								clickCallback={handleTextChange}
-								closeCallback={() => {
-									setShowEdit(false);
-								}}
-							/>
+							{/*<BottomButtonGroup*/}
+							{/*	title='Save'*/}
+							{/*	clickCallback={handleTextChange}*/}
+							{/*	closeCallback={() => {*/}
+							{/*		setShowEdit(false);*/}
+							{/*	}}*/}
+							{/*/>*/}
 						</TextAreaContainer>
 					) : (
 						<>
@@ -160,18 +160,18 @@ const Checklist = (props) => {
 								onChange={(e) => setNewItem(e.target.value)}
 								placeholder='Add an item'
 							/>
-							<BottomButtonGroup
-								title='Add'
-								clickCallback={() => handleAddChecklistItem(props._id)}
-								closeCallback={() => setShowAddItem(false)}
-							/>
-						</TextAreaContainer>
+							{/*<BottomButtonGroup*/}
+							{/*	title='Add'*/}
+							{/*	clickCallback={() => handleAddChecklistItem(props._id)}*/}
+							{/*	closeCallback={() => setShowAddItem(false)}*/}
+							{/*/>*/}
+						</TextAreaContainer >
 					) : (
 						<Button clickCallback={() => setShowAddItem(true)} title='Add an item' />
 					)}
-				</RightColumn>
-			</Row>
-		</Container>
+				</RightColumn >
+			</Row >
+		</Container >
 	);
 };
 

@@ -2,7 +2,7 @@ import { Avatar } from '@mui/material';
 import moment from 'moment';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Container, LeftContainer, RightContainer, LogWrapper, Title, Date } from './styled';
+import './ActivityLog.css';
 
 const ActivityLog = () => {
 	const card = useSelector((state) => state.card);
@@ -11,8 +11,8 @@ const ActivityLog = () => {
 			{card.activities.map((activity, index) => {
 				if (!activity.isComment)
 					return (
-						<Container key={index}>
-							<LeftContainer>
+						<div className="Container" key={index}>
+							<div className="LeftContainer">
 								<Avatar
 									sx={{
 										width: 28,
@@ -24,14 +24,14 @@ const ActivityLog = () => {
 								>
 									{activity.userName[0].toUpperCase()}
 								</Avatar>
-							</LeftContainer>
-							<RightContainer>
-								<LogWrapper>
-									<Title>{activity.userName}</Title> {activity.text}
-								</LogWrapper>
-								<Date>{moment(activity.date).format('MMMM Do YYYY, h:mm:ss a')}</Date>
-							</RightContainer>
-						</Container>
+							</div>
+							<div className="RightContainer">
+								<div className="LogWrapper">
+									<div className="Title">{activity.userName}</div> {activity.text}
+								</div>
+								<div className="Date">{moment(activity.date).format('MMMM Do YYYY, h:mm:ss a')}</div>
+							</div>
+						</div>
 					);
 				return undefined;
 			})}

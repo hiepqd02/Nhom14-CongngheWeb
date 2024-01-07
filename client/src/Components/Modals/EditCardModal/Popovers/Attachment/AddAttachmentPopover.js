@@ -31,7 +31,6 @@ const AddAttachmentPopover = (props) => {
 			linkName,
 			dispatch
 		);
-		
 	};
 	return (
 		<Container>

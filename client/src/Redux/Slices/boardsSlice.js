@@ -4,8 +4,8 @@ const initialState = {
     boardsData: {},
     pending: true,
     backgroundImages: [
-        "https://images.unsplash.com/photo-1636471815144-616b00e21f24",
         "https://images.unsplash.com/photo-1636467455675-46b5552af493",
+        "https://images.unsplash.com/photo-1636471815144-616b00e21f24",
         "https://images.unsplash.com/photo-1636412911203-4065623b94fc",
         "https://images.unsplash.com/photo-1636408807362-a6195d3dd4de",
         "https://images.unsplash.com/photo-1603932743786-9a069a74e632",

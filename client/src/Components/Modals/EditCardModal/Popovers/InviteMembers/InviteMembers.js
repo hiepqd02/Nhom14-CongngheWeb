@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Container, SearchContainer, SearchBar, ChipContainer } from './styled';
 import Button from '../../ReUsableComponents/Button';
 import Avatar from '@mui/material/Avatar';
 import Chip from '@mui/material/Chip';
@@ -10,6 +9,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserFromEmail } from '../../../../../Services/userService';
 import { openAlert } from '../../../../../Redux/Slices/alertSlice';
 import { boardMemberAdd } from '../../../../../Services/boardService';
+
+import './InviteMember.css'
 
 const useStyles = makeStyles({
 	root: {
@@ -23,14 +24,10 @@ const ChipComponent = (props) => {
 	const classes = useStyles();
 	return (
 		<Tooltip TransitionComponent={Zoom} title={`${name} ${surname}`} size='small' placement='top' arrow>
-			<Chip
-				className={classes.root}
-				onDelete={() => callback(email)}
-				avatar={<Avatar>{name.toString()[0]}</Avatar>}
-				label={name}
-				size='small'
-				color='secondary'
-			/>
+			<div className={`chip ${classes.root}`} onClick={() => callback(email)}>
+				<Avatar>{name.toString()[0]}</Avatar>
+				<span>{name}</span>
+			</div>
 		</Tooltip>
 	);
 };
@@ -40,13 +37,13 @@ const InviteMembers = () => {
 	const [members, setMembers] = useState([]);
 	const dispatch = useDispatch();
 	const boardMembers = useSelector((state) => state.board.members);
-	const boardId = useSelector(state=>state.board.id);
+	const boardId = useSelector(state => state.board.id);
 	const handleAddClick = async () => {
 		const checkMember = boardMembers.filter((m) => m.email === memberMail)[0];
 		if (checkMember) {
 			dispatch(
 				openAlert({
-					message: `${checkMember.name} is already member of this board!`,
+					message: `${checkMember.name} is already a member of this board!`,
 					severity: 'error',
 				})
 			);
@@ -64,14 +61,14 @@ const InviteMembers = () => {
 		setMembers([...newMembers]);
 	};
 
-	const handleInviteClick= async()=>{
-		await boardMemberAdd(boardId,members,dispatch);
+	const handleInviteClick = async () => {
+		await boardMemberAdd(boardId, members, dispatch);
 	}
 
 	return (
-		<Container>
-			<SearchContainer>
-				<SearchBar
+		<div className="container">
+			<div className="search-container">
+				<input
 					type='email'
 					placeholder="Member's Email"
 					value={memberMail}
@@ -80,14 +77,14 @@ const InviteMembers = () => {
 					}}
 				/>
 				<Button title='Add' style={{ flex: '1' }} clickCallback={handleAddClick} />
-			</SearchContainer>
-			<ChipContainer>
+			</div>
+			<div className="chip-container">
 				{members.map((member) => {
 					return <ChipComponent key={member.email} callback={handleDelete} {...member} />;
 				})}
-			</ChipContainer>
+			</div>
 			{members.length > 0 && <Button clickCallback={handleInviteClick} title='Invite' />}
-		</Container>
+		</div>
 	);
 };
 
